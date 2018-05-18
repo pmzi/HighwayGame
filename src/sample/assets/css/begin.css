@@ -1,0 +1,7 @@
+.road{
+    -fx-max-width: 2000px;
+    -fx-pref-height: 50px;
+    -fx-border-style: dashed;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #2980b9;
+}
