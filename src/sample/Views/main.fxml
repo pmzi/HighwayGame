@@ -1,0 +1,121 @@
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<GridPane fx:id="wrapper" fx:controller="sample.Controllers.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="CENTER_RIGHT" gridLinesVisible="false">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="100" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="1" />
+        <RowConstraints percentHeight="44.5" />
+        <RowConstraints percentHeight="44.5" />
+        <RowConstraints percentHeight="10" />
+    </rowConstraints>
+
+    <HBox style="-fx-background-color: #e74c3c;" xmlns:fx="http://javafx.com/fxml" GridPane.columnIndex="0" GridPane.rowIndex="0">
+
+
+
+    </HBox>
+
+    <GridPane maxHeight="Infinity" maxWidth="Infinity" style="-fx-fit-to-width: true;" styleClass="fullWidthGridPane" GridPane.rowIndex="1" GridPane.columnIndex="0" xmlns:fx="http://javafx.com/fxml" alignment="center"
+              gridLinesVisible="false">
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="33.33" />
+            <ColumnConstraints percentWidth="33.33" />
+            <ColumnConstraints percentWidth="33.33" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints percentHeight="20" />
+            <RowConstraints percentHeight="80" />
+        </rowConstraints>
+
+        <Label styleClass="buttonLabel" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" text="New Game" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <Button GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="0">
+            <graphic>
+                <ImageView>
+                    <Image url="@../assets/images/cars/truck-r.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Label styleClass="buttonLabel" GridPane.halignment="center" GridPane.valignment="BOTTOM" text="Load" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+        <Button GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="1">
+            <graphic>
+                <ImageView>
+                    <Image url="@../assets/images/cars/truck-r.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Label styleClass="buttonLabel" GridPane.halignment="center" GridPane.valignment="BOTTOM" text="Load Video" GridPane.rowIndex="0" GridPane.columnIndex="2" />
+        <Button GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="2">
+            <graphic>
+                <ImageView>
+                    <Image url="@../assets/images/cars/truck-r.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+    </GridPane>
+
+    <GridPane maxHeight="Infinity" maxWidth="Infinity" style="-fx-fit-to-width: true;" styleClass="fullWidthGridPane" GridPane.rowIndex="2" GridPane.columnIndex="0" xmlns:fx="http://javafx.com/fxml" alignment="center"
+              gridLinesVisible="false">
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50" />
+            <ColumnConstraints percentWidth="50" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints percentHeight="20" />
+            <RowConstraints percentHeight="80" />
+        </rowConstraints>
+
+        <Label styleClass="buttonLabel" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" text="New Game" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <Button GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="0">
+            <graphic>
+                <ImageView>
+                    <Image url="@../assets/images/cars/truck-r.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Label styleClass="buttonLabel" GridPane.halignment="center" GridPane.valignment="BOTTOM" text="About" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+        <Button GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="1">
+            <graphic>
+                <ImageView>
+                    <Image url="@../assets/images/cars/truck-r.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+    </GridPane>
+
+    <GridPane GridPane.columnIndex="0" GridPane.rowIndex="3" xmlns:fx="http://javafx.com/fxml" alignment="CENTER" gridLinesVisible="false">
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50" />
+            <ColumnConstraints percentWidth="50" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints percentHeight="100" />
+        </rowConstraints>
+
+        <padding>
+            <Insets left="10" right="10" />
+        </padding>
+
+        <Button style="-fx-background-color: #8e44ad;" GridPane.valignment="CENTER" GridPane.halignment="LEFT" styleClass="iconicLabelLessButton" GridPane.rowIndex="0" GridPane.columnIndex="0">
+
+        </Button>
+
+        <Button style="-fx-background-color: red;" GridPane.valignment="CENTER" GridPane.halignment="RIGHT" styleClass="iconicLabelLessButton" GridPane.rowIndex="0" GridPane.columnIndex="1">
+
+        </Button>
+
+    </GridPane>
+
+</GridPane>
