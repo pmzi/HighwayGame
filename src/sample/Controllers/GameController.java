@@ -1,8 +1,21 @@
 package sample.Controllers;
 
-/**
- * Created by pmzi on 7/6/2018.
- */
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import sample.PageBuilder.SaveModal;
+
+
 public class GameController {
+
+    @FXML
+    private Button exitIcon;
+
+    @FXML
+    public void showSave(){
+
+        SaveModal saveModal = new SaveModal();
+        saveModal.show();
+
+    }
 
 }
