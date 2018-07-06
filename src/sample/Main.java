@@ -1,13 +1,13 @@
 package sample;
 
-import sample.PageBuilder.SettingsPage;
+import sample.PageBuilder.GamePage;
 
 public class Main {
 
 
     public static void main(String[] args) {
 
-        SettingsPage.launchIt();
+        GamePage.launchIt();
 
     }
 }

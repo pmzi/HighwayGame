@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<GridPane fx:id="wrapper" fx:controller="sample.Controllers.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="CENTER_RIGHT" gridLinesVisible="false">
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="100" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="10" />
+        <RowConstraints percentHeight="90" />
+    </rowConstraints>
+
+    <HBox fx:id="topMenu" GridPane.columnIndex="0" GridPane.rowIndex="0"
+        alignment="CENTER_RIGHT">
+        <padding>
+            <Insets right="10" />
+        </padding>
+        <Button fx:id="exitIcon" styleClass="gameIconicButtons">
+            <HBox.margin>
+                <Insets>
+                    <right>10</right>
+                </Insets>
+            </HBox.margin>
+        </Button>
+        <Button fx:id="pauseIcon" styleClass="gameIconicButtons">
+            <HBox.margin>
+                <Insets>
+                    <right>10</right>
+                </Insets>
+            </HBox.margin>
+        </Button>
+        <Button fx:id="musicIcon" styleClass="gameIconicButtons">
+            <HBox.margin>
+                <Insets>
+                    <right>10</right>
+                </Insets>
+            </HBox.margin>
+        </Button>
+        <Button fx:id="speedIcon" styleClass="gameIconicButtons">
+            <HBox.margin>
+                <Insets>
+                    <right>10</right>
+                </Insets>
+            </HBox.margin>
+        </Button>
+        <Button fx:id="saveIcon" styleClass="gameIconicButtons">
+            <HBox.margin>
+                <Insets>
+                    <right>10</right>
+                </Insets>
+            </HBox.margin>
+        </Button>
+        <Label fx:id="scoreIcon" styleClass="iconicLabel">
+
+        </Label>
+        <Label styleClass="iconicLabelValue">
+            100000
+            <HBox.margin>
+                <Insets>
+                    <right>10</right>
+                    <left>-5</left>
+                </Insets>
+            </HBox.margin>
+        </Label>
+        <Label fx:id="timeIcon" styleClass="iconicLabel">
+
+        </Label>
+        <Label styleClass="iconicLabelValue">
+            00:00
+            <HBox.margin>
+                <Insets>
+                    <left>-5</left>
+                </Insets>
+            </HBox.margin>
+        </Label>
+    </HBox>
+
+    <GridPane GridPane.columnIndex="0" GridPane.rowIndex="1" gridLinesVisible="true">
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="100" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints percentHeight="5" />
+            <RowConstraints percentHeight="22" />
+            <RowConstraints percentHeight="22" />
+            <RowConstraints percentHeight="2" />
+            <RowConstraints percentHeight="22" />
+            <RowConstraints percentHeight="22" />
+            <RowConstraints percentHeight="5" />
+        </rowConstraints>
+
+        <HBox styleClass="road" GridPane.rowIndex="1" GridPane.columnIndex="0">
+
+        </HBox>
+
+        <HBox styleClass="road" GridPane.rowIndex="2" GridPane.columnIndex="0">
+
+        </HBox>
+
+        <HBox styleClass="road" GridPane.rowIndex="4" GridPane.columnIndex="0">
+
+        </HBox>
+
+        <HBox styleClass="road" GridPane.rowIndex="5" GridPane.columnIndex="0">
+
+            <Label styleClass="car">
+                <graphic>
+                    <ImageView>
+                        <Image url="@../assets/images/cars/car.png" />
+                    </ImageView>
+                </graphic>
+            </Label>
+
+        </HBox>
+
+        <!-- Main Items -->
+
+        <HBox GridPane.rowIndex="0" GridPane.columnIndex="0">
+
+        </HBox>
+
+        <HBox styleClass="roadAside" GridPane.rowIndex="6" GridPane.columnIndex="0" alignment="TOP_CENTER">
+            <Label style="-fx-translate-y: -100px;" styleClass="person">
+
+            </Label>
+        </HBox>
+
+        <HBox styleClass="roadMiddleware" GridPane.rowIndex="3" GridPane.columnIndex="0">
+
+        </HBox>
+
+    </GridPane>
+
+    <VBox maxWidth="70" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="roadBridge">
+
+    </VBox>
+
+    <VBox maxHeight="430" maxWidth="70" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="roadWay">
+
+    </VBox>
+
+</GridPane>
