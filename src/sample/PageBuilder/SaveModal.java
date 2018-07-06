@@ -23,6 +23,7 @@ public class SaveModal {
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
             Stage stage = new Stage();
             stage.setTitle("Save Modal");
+            scene.getStylesheets().add("sample/assets/css/modal.css");
             stage.setScene(scene);
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.showAndWait();

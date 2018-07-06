@@ -22,7 +22,7 @@
         <padding>
             <Insets right="10" />
         </padding>
-        <Button onAction="#showSave" fx:id="exitIcon" styleClass="gameIconicButtons">
+        <Button onAction="#exit" fx:id="exitIcon" styleClass="gameIconicButtons">
             <HBox.margin>
                 <Insets>
                     <right>10</right>
