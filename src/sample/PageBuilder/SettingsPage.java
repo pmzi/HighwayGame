@@ -20,14 +20,25 @@ public class SettingsPage extends Application {
 
         primaryStage.setTitle("Traffic Simulator");
         primaryStage.setResizable(false);
-        Scene scene = new Scene(root, 1000, 520);
+        Scene scene = new Scene(root, 1600, 520);
         scene.getStylesheets().add("sample/assets/css/main.css");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
+//    private GridPane build(GridPane gridPane){
+//
+//        int roads = 2;
+//        int ways = 1;
+//        int persons = 1;
+//        int bridges = 1;
+//
+//
+//
+//    }
 
-    public static void main(String[] args) {
-        launch(args);
+
+    public static void launchIt() {
+        launch();
     }
 }
