@@ -52,7 +52,7 @@
         </Button>
 
         <Label styleClass="buttonLabel" GridPane.halignment="center" GridPane.valignment="BOTTOM" text="Load Video" GridPane.rowIndex="0" GridPane.columnIndex="2" />
-        <Button GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="2">
+        <Button onAction="#showReplyPage" GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="2">
             <graphic>
                 <ImageView>
                     <Image url="@../assets/images/cars/truck-r.png"/>
