@@ -1,1 +1,39 @@
-{"persons":1}
+{
+  "persons": 0,
+  "ways": {
+    "length": 0,
+    "items": []
+  },
+  "roads": {
+    "items": [
+      {
+        "row": 3,
+        "speedEnd": 20,
+        "randomize": 1,
+        "speedStart": 10
+      },
+      {
+        "row": 5,
+        "speedEnd": 20,
+        "randomize": 1,
+        "speedStart": 10
+      },
+      {
+        "row": 2,
+        "speedEnd": 19,
+        "randomize": 1,
+        "speedStart": 11
+      },
+      {
+        "row": 6,
+        "speedEnd": 20,
+        "randomize": 1,
+        "speedStart": 10
+      }
+    ]
+  },
+  "bridges": {
+    "length": 4,
+    "items": []
+  }
+}
