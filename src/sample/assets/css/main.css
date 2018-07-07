@@ -99,7 +99,7 @@ ToolBox icons
     -fx-background-image: url("../images/icons/highway.png");
 }
 #toolboxPerson{
-    -fx-background-image: url("../images/icons/highway.png");
+    -fx-background-image: url("../images/icons/standing-up-man-.png");
 }
 #toolboxWay{
     -fx-background-image: url("../images/icons/road.png");
@@ -110,6 +110,12 @@ ToolBox icons
 #toolboxRemove{
     -fx-background-image: url("../images/icons/remove.png");
 }
+#toolboxRemoveRoad{
+    -fx-background-image: url("../images/icons/remove.png");
+}
+#toolboxRemovePerson{
+    -fx-background-image: url("../images/icons/remove.png");
+}
 
 /*
 RoadWrapper
@@ -117,6 +123,7 @@ RoadWrapper
 .road{
     -fx-background-image: url("../images/icons/road_h.png");
     -fx-background-size: auto 100%;
+    -fx-cursor: hand;
 }
 .roadMiddleware{
     -fx-background-color: black;
@@ -166,7 +173,7 @@ RoadWrapper
     -fx-cursor: hand;
     -fx-background-image: url("../images/icons/bridge.png");
     -fx-background-size: 100% 100%;
-    -fx-translate-y: -45px;
+    -fx-translate-y: -48px;
 }
 
 .controlButtons{
