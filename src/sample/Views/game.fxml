@@ -20,7 +20,7 @@
     <HBox fx:id="topMenu" GridPane.columnIndex="0" GridPane.rowIndex="0"
         alignment="CENTER_RIGHT">
         <padding>
-            <Insets right="10" />
+            <Insets right="10" left="10" />
         </padding>
         <Button onAction="#exit" fx:id="exitIcon" styleClass="gameIconicButtons">
             <HBox.margin>
@@ -57,6 +57,7 @@
                 </Insets>
             </HBox.margin>
         </Button>
+        <Region HBox.hgrow="ALWAYS" />
         <Label fx:id="scoreIcon" styleClass="iconicLabel">
 
         </Label>
@@ -114,7 +115,7 @@
             <Label styleClass="car">
                 <graphic>
                     <ImageView>
-                        <Image url="@../assets/images/cars/car.png" />
+                        <Image url="@../assets/images/cars/right/car.png" />
                     </ImageView>
                 </graphic>
             </Label>
@@ -139,11 +140,11 @@
 
     </GridPane>
 
-    <VBox maxWidth="70" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="roadBridge">
+    <VBox maxWidth="70" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="roadBridgeGamePage">
 
     </VBox>
 
-    <VBox maxHeight="430" maxWidth="70" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="roadWay">
+    <VBox maxHeight="430" maxWidth="70" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="roadWayGamePage">
 
     </VBox>
 
