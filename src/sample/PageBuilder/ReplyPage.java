@@ -2,6 +2,7 @@ package sample.PageBuilder;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,6 +24,7 @@ public class ReplyPage {
             Stage stage = new Stage();
             stage.setTitle("Load a game");
             scene.getStylesheets().add("sample/assets/css/main.css");
+            stage.getIcons().add(new Image("sample/assets/images/icon.png"));
             stage.setScene(scene);
             stage.show();
 

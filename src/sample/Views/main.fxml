@@ -14,7 +14,7 @@
         <RowConstraints percentHeight="10" />
     </rowConstraints>
 
-    <HBox style="-fx-background-color: #e74c3c;" xmlns:fx="http://javafx.com/fxml" GridPane.columnIndex="0" GridPane.rowIndex="0">
+    <HBox style="-fx-background-color: #8e44ad;" xmlns:fx="http://javafx.com/fxml" GridPane.columnIndex="0" GridPane.rowIndex="0">
 
 
 
@@ -37,7 +37,7 @@
         <Button onAction="#showSettingsPage" GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="0">
             <graphic>
                 <ImageView>
-                    <Image url="@../assets/images/cars/truck-r.png"/>
+                    <Image url="@../assets/images/icons/newGame.png"/>
                 </ImageView>
             </graphic>
         </Button>
@@ -46,7 +46,7 @@
         <Button onAction="#showLoadPage" GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="1">
             <graphic>
                 <ImageView>
-                    <Image url="@../assets/images/cars/truck-r.png"/>
+                    <Image url="@../assets/images/icons/trolley.png"/>
                 </ImageView>
             </graphic>
         </Button>
@@ -55,7 +55,7 @@
         <Button onAction="#showReplyPage" GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="2">
             <graphic>
                 <ImageView>
-                    <Image url="@../assets/images/cars/truck-r.png"/>
+                    <Image url="@../assets/images/icons/photo-camera.png"/>
                 </ImageView>
             </graphic>
         </Button>
@@ -66,19 +66,20 @@
               gridLinesVisible="false">
 
         <columnConstraints>
-            <ColumnConstraints percentWidth="50" />
-            <ColumnConstraints percentWidth="50" />
+            <ColumnConstraints percentWidth="33.33" />
+            <ColumnConstraints percentWidth="33.33" />
+            <ColumnConstraints percentWidth="33.33" />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints percentHeight="20" />
             <RowConstraints percentHeight="80" />
         </rowConstraints>
 
-        <Label styleClass="buttonLabel" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" text="Scores and Ranking" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <Label styleClass="buttonLabel" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" text="Ranking" GridPane.rowIndex="0" GridPane.columnIndex="0" />
         <Button onAction="#showScoresPage" GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="0">
             <graphic>
                 <ImageView>
-                    <Image url="@../assets/images/cars/truck-r.png"/>
+                    <Image url="@../assets/images/icons/ranking.png"/>
                 </ImageView>
             </graphic>
         </Button>
@@ -87,7 +88,16 @@
         <Button GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="1">
             <graphic>
                 <ImageView>
-                    <Image url="@../assets/images/cars/truck-r.png"/>
+                    <Image url="@../assets/images/icons/web.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Label styleClass="buttonLabel" GridPane.halignment="center" GridPane.valignment="BOTTOM" text="Github" GridPane.rowIndex="0" GridPane.columnIndex="2" />
+        <Button GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="2">
+            <graphic>
+                <ImageView>
+                    <Image url="@../assets/images/icons/github.png"/>
                 </ImageView>
             </graphic>
         </Button>
@@ -108,11 +118,11 @@
             <Insets left="10" right="10" />
         </padding>
 
-        <Button style="-fx-background-color: #8e44ad;" GridPane.valignment="CENTER" GridPane.halignment="LEFT" styleClass="iconicLabelLessButton" GridPane.rowIndex="0" GridPane.columnIndex="0">
+        <Button GridPane.valignment="CENTER" GridPane.halignment="LEFT" styleClass="iconicLabelLessButton" fx:id="musicIcon" GridPane.rowIndex="0" GridPane.columnIndex="0">
 
         </Button>
 
-        <Button style="-fx-background-color: red;" GridPane.valignment="CENTER" GridPane.halignment="RIGHT" styleClass="iconicLabelLessButton" GridPane.rowIndex="0" GridPane.columnIndex="1">
+        <Button GridPane.valignment="CENTER" GridPane.halignment="RIGHT" styleClass="iconicLabelLessButton" fx:id="exitIcon" GridPane.rowIndex="0" GridPane.columnIndex="1">
 
         </Button>
 

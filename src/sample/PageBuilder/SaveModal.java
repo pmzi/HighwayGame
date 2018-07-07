@@ -2,6 +2,7 @@ package sample.PageBuilder;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -25,6 +26,7 @@ public class SaveModal {
             stage.setTitle("Save Modal");
             scene.getStylesheets().add("sample/assets/css/modal.css");
             stage.setScene(scene);
+            stage.getIcons().add(new Image("sample/assets/images/icon.png"));
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.showAndWait();
 
