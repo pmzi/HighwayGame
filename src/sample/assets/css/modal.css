@@ -1,6 +1,13 @@
 .title{
     -fx-font-size: 30px;
 }
+.titleOfWining{
+    -fx-font-size: 20px;
+}
+.winnerModalRoot{
+    -fx-background-image: url("../images/bg/winner.jpg");
+    /*-fx-background-size: cover;*/
+}
 .button{
     -fx-border-width: 0px;
     -fx-cursor: hand;

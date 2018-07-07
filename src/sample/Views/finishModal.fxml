@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<GridPane styleClass="winnerModalRoot" fx:id="wrapper" fx:controller="sample.Controllers.FinishModalController"
+          xmlns:fx="http://javafx.com/fxml" alignment="CENTER_RIGHT" gridLinesVisible="false">
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="100" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="40" />
+        <RowConstraints percentHeight="20" />
+        <RowConstraints percentHeight="20" />
+        <RowConstraints percentHeight="20" />
+    </rowConstraints>
+
+    <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <Label styleClass="titleOfWining">
+            You Won:)
+        </Label>
+    </HBox>
+
+    <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <Label styleClass="winnerHelpLabel">
+            Enter a name to save your score:
+        </Label>
+    </HBox>
+
+    <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <TextField />
+    </HBox>
+
+    <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="3">
+        <Button styleClass="button">
+            Save and Party!
+        </Button>
+    </HBox>
+
+</GridPane>
