@@ -5,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import sample.Controllers.RoadSettingsController;
 import sample.PageBuilder.RoadSettingsModal;
 
 /**
@@ -22,6 +23,30 @@ public class Road extends DesignObject{
         this.create(rowPosition);
         this.initEvents();
 
+    }
+
+//    public void setRandomize(int randomize){
+//        this.randomize = randomize;
+//    }
+//
+//    public void setSpeedStart(int speedStart){
+//        this.speedStart = speedStart;
+//    }
+//
+//    public void setSpeedEnd(int speedEnd){
+//        this.speedEnd = speedEnd;
+//    }
+
+    public int getRandomize(){
+        return this.randomize;
+    }
+
+    public int getSpeedStart(){
+        return this.speedStart;
+    }
+
+    public int getSpeedEnd(){
+        return this.speedEnd;
     }
 
     private void create(int rowPosition){
@@ -43,7 +68,14 @@ public class Road extends DesignObject{
             @Override
             public void handle(MouseEvent arg) {
 
-                RoadSettingsModal.show();
+                RoadSettingsController controller = RoadSettingsModal.show();
+                if(controller.randomize.getText().trim() != ""){
+                    randomize = Integer.parseInt(controller.randomize.getText());
+                }
+
+                speedStart = (int)controller.speedStart.getValue();
+
+                speedEnd = (int)controller.speedEnd.getValue();
 
             }
 
