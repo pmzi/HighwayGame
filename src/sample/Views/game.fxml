@@ -50,7 +50,7 @@
                 </Insets>
             </HBox.margin>
         </Button>
-        <Button fx:id="saveIcon" styleClass="gameIconicButtons">
+        <Button onAction="#showSave" fx:id="saveIcon" styleClass="gameIconicButtons">
             <HBox.margin>
                 <Insets>
                     <right>10</right>
@@ -82,7 +82,7 @@
         </Label>
     </HBox>
 
-    <GridPane GridPane.columnIndex="0" GridPane.rowIndex="1" gridLinesVisible="true">
+    <GridPane GridPane.columnIndex="0" GridPane.rowIndex="1" gridLinesVisible="false">
 
         <columnConstraints>
             <ColumnConstraints percentWidth="100" />
