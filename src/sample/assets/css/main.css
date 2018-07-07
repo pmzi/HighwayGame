@@ -156,6 +156,7 @@ RoadWrapper
     -fx-cursor: hand;
     -fx-background-image: url("../images/icons/way.png");
     -fx-background-size: 100% auto;
+    -fx-translate-y: -45px;
 }
 .roadBridge{
     -fx-pref-width: 200;
@@ -165,6 +166,7 @@ RoadWrapper
     -fx-cursor: hand;
     -fx-background-image: url("../images/icons/bridge.png");
     -fx-background-size: 100% 100%;
+    -fx-translate-y: -45px;
 }
 
 .controlButtons{

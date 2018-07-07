@@ -51,7 +51,19 @@
 
         </rowConstraints>
 
-        <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="road" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="road" GridPane.columnIndex="0" GridPane.rowIndex="3">
+
+            <padding>
+                <Insets right="10" />
+            </padding>
+
+            <Button onAction="#showRoadSettings" styleClass="roadSettingsButton">
+
+            </Button>
+
+        </HBox>
+
+        <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="road" GridPane.columnIndex="0" GridPane.rowIndex="5">
 
             <padding>
                 <Insets right="10" />
@@ -68,7 +80,7 @@
 
         </HBox>
 
-        <HBox alignment="CENTER" styleClass="roadAside" GridPane.columnIndex="0" GridPane.rowIndex="9">
+        <HBox alignment="CENTER" styleClass="roadAside" GridPane.columnIndex="0" GridPane.rowIndex="6">
 
             <Label styleClass="person">
 
@@ -95,11 +107,11 @@
 
     </GridPane>
 
-    <VBox maxHeight="490" styleClass="roadWay" GridPane.columnIndex="1" GridPane.valignment="TOP">
+    <VBox maxHeight="110" styleClass="roadWay" GridPane.columnIndex="1" GridPane.valignment="CENTER">
 
     </VBox>
 
-    <VBox maxHeight="490" styleClass="roadBridge" GridPane.columnIndex="1" GridPane.valignment="TOP">
+    <VBox maxHeight="110" styleClass="roadBridge" GridPane.columnIndex="1" GridPane.valignment="CENTER">
 
     </VBox>
 
