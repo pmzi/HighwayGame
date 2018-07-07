@@ -6,6 +6,7 @@ import sample.Helpers.WindowHelper;
 import sample.PageBuilder.LoadPage;
 import sample.PageBuilder.ReplyPage;
 import sample.PageBuilder.ScorePage;
+import sample.PageBuilder.SettingsPage;
 
 public class Controller {
 
@@ -37,6 +38,14 @@ public class Controller {
         ReplyPage replyPage = new ReplyPage();
         replyPage.show();
 
+    }
+
+    @FXML
+    public void showSettingsPage(ActionEvent e){
+        WindowHelper.hideCurrent(e);
+
+        SettingsPage settingsPage = new SettingsPage();
+        settingsPage.show();
     }
 
 }

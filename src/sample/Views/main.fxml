@@ -34,7 +34,7 @@
         </rowConstraints>
 
         <Label styleClass="buttonLabel" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" text="New Game" GridPane.rowIndex="0" GridPane.columnIndex="0" />
-        <Button GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="0">
+        <Button onAction="#showSettingsPage" GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="0">
             <graphic>
                 <ImageView>
                     <Image url="@../assets/images/cars/truck-r.png"/>

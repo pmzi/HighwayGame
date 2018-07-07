@@ -1,44 +1,30 @@
 package sample.PageBuilder;
 
-import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class SettingsPage extends Application {
+import java.io.IOException;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../Views/settings.fxml"));
+public class SettingsPage {
 
-        // load the tron font.
-//        Font.loadFont(
-//                Main.class.getResource("@assets/fonts/Avenir.otf").toExternalForm(),
-//                10
-//        );
+    public void show(){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("../Views/settings.fxml"));
+            /*
+             * if "fx:controller" is not set in fxml
+             * fxmlLoader.setController(NewWindowController);
+             */
+            Scene scene = new Scene(fxmlLoader.load(), 1600, 520);
+            Stage stage = new Stage();
+            stage.setTitle("Traffic Simulator Map Builder");
+            scene.getStylesheets().add("sample/assets/css/main.css");
+            stage.setScene(scene);
+            stage.show();
 
-        primaryStage.setTitle("Traffic Simulator");
-        primaryStage.setResizable(false);
-        Scene scene = new Scene(root, 1600, 520);
-        scene.getStylesheets().add("sample/assets/css/main.css");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
-//    private GridPane build(GridPane gridPane){
-//
-//        int roads = 2;
-//        int ways = 1;
-//        int persons = 1;
-//        int bridges = 1;
-//
-//
-//
-//    }
-
-
-    public static void launchIt() {
-        launch();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
