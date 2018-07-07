@@ -111,10 +111,10 @@ ToolBox icons
     -fx-background-image: url("../images/icons/remove.png");
 }
 #toolboxRemoveRoad{
-    -fx-background-image: url("../images/icons/remove.png");
+    -fx-background-image: url("../images/icons/removeRoad.png");
 }
 #toolboxRemovePerson{
-    -fx-background-image: url("../images/icons/remove.png");
+    -fx-background-image: url("../images/icons/removePerson.png");
 }
 
 /*
