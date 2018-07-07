@@ -65,7 +65,7 @@
 
             </HBox>
 
-            <HBox alignment="CENTER" styleClass="roadAside" GridPane.columnIndex="0" GridPane.rowIndex="6">
+            <HBox fx:id="roadAside" alignment="CENTER" styleClass="roadAside" GridPane.columnIndex="0" GridPane.rowIndex="6">
 
 
             </HBox>

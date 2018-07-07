@@ -2,6 +2,7 @@ package sample.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import sample.DesignObjects.*;
 import sample.Models.SettingsModel;
 
@@ -25,6 +26,7 @@ public class SettingsController {
 
     private boolean isGoingToRemove = false;
 
+    private ArrayList<Road> roadsElements = new ArrayList<>();
     private ArrayList<RoadWay> roadWays = new ArrayList<>();
     private ArrayList<RoadBridge> roadBridges = new ArrayList<>();
 
@@ -32,6 +34,8 @@ public class SettingsController {
     private GridPane roadWrapper;
     @FXML
     private GridPane wrapper;
+    @FXML
+    private HBox roadAside;
 
     public void addRoad(){
 
@@ -47,9 +51,17 @@ public class SettingsController {
 
         this.calculateHighwayHeight();
 
-        // Let's repaint the roadSection
+        // Let's create 2 new roads
 
-        this.repaintRoadSection();
+        Road road1 = new Road(this.maxRoads - this.roads);
+        Road road2 = new Road(this.maxRoads + this.roads);
+
+        this.roadsElements.add(road1);
+        this.roadsElements.add(road2);
+
+        // Let's paint them
+
+        this.paintRoads(road1, road2);
 
         this.resizeWaysAndBridges();
 
@@ -99,7 +111,7 @@ public class SettingsController {
 
         // Let's repaint the road section so that new person will be shawn
 
-        this.repaintRoadSection();
+        this.repaintRoadAside();
 
     }
 
@@ -154,7 +166,7 @@ public class SettingsController {
 
         // Let's repaint the roads
 
-        this.repaintRoadSection();
+        this.repaintRoadAside();
 
     }
 
@@ -168,6 +180,21 @@ public class SettingsController {
 
         this.roads--;
 
+        // Let's get the poor roads
+
+        int firstIndex = this.roadsElements.size()-1;
+        int secondIndex = this.roadsElements.size()-2;
+
+        Road road1 = this.roadsElements.get(firstIndex);
+        Road road2 = this.roadsElements.get(secondIndex);
+
+        this.roadsElements.remove(firstIndex);
+        this.roadsElements.remove(secondIndex);
+
+        System.out.println(firstIndex);
+        System.out.println(secondIndex);
+        this.removeRoads(road1, road2);
+
         // Let's recalculate the highway height
 
         this.calculateHighwayHeight();
@@ -175,10 +202,6 @@ public class SettingsController {
         // Let's repaint the roadSection
 
         this.resizeWaysAndBridges();
-
-        // Let's repaint the roads
-
-        this.repaintRoadSection();
 
     }
 
@@ -202,6 +225,14 @@ public class SettingsController {
 
     public int getPersonsLength(){
         return this.persons;
+    }
+
+    public ArrayList<RoadWay> getRoadWays(){
+        return this.roadWays;
+    }
+
+    public ArrayList<RoadBridge> getRoadBridges(){
+        return this.roadBridges;
     }
 
     // Private methods
@@ -238,40 +269,19 @@ public class SettingsController {
         }
     }
 
-    private void repaintRoadSection(){
-        // Let's clear all
+    private void repaintRoadAside(){
 
-        roadWrapper.getChildren().clear();
+        // Let's clear roadAside
 
-        // Let's add upward road
-
-        for(int i=3;i>(3-this.roads);i--){
-
-            Road road = new Road(i);
-
-            roadWrapper.getChildren().add(road.get());
-
-        }
-
-        // Let's add downward road
-
-        for(int i=5;i<(5+this.roads);i++){
-
-            Road road = new Road(i);
-
-            roadWrapper.getChildren().add(road.get());
-
-        }
-
-        // Let's add roadMiddleware
-
-        RoadMiddleware roadMiddleware = new RoadMiddleware(4);
-        roadWrapper.getChildren().add(roadMiddleware.get());
+        this.roadAside.getChildren().clear();
 
         // Let's add aside
 
-        RoadAside roadAside = new RoadAside(this.roads+5,persons);
-        roadWrapper.getChildren().add(roadAside.get());
+        for(int i=0;i<persons;i++){
+            Person person = new Person();
+
+            this.roadAside.getChildren().add(person.get());
+        }
 
         // We are done;)
     }
@@ -332,6 +342,20 @@ public class SettingsController {
                 roadWays.get(i).changePosition(pos);
             }
         }
+    }
+
+    private void paintRoads(Road road1, Road road2){
+
+        roadWrapper.getChildren().add(road1.get());
+        roadWrapper.getChildren().add(road2.get());
+
+    }
+
+    private void removeRoads(Road road1, Road road2){
+
+        roadWrapper.getChildren().remove(road1.get());
+        roadWrapper.getChildren().remove(road2.get());
+
     }
 
 }
