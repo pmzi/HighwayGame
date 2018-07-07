@@ -1,10 +1,16 @@
 package sample.Controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import sample.DesignObjects.*;
+import sample.DesignObjects.Person;
+import sample.DesignObjects.Road;
+import sample.DesignObjects.RoadBridge;
+import sample.DesignObjects.RoadWay;
+import sample.Helpers.WindowHelper;
 import sample.Models.SettingsModel;
+import sample.PageBuilder.GamePage;
 
 import java.util.ArrayList;
 
@@ -217,9 +223,13 @@ public class SettingsController {
 
     }
 
-    public void save(){
+    public void save(ActionEvent e){
 
         SettingsModel.save(this);
+
+        WindowHelper.hideCurrent(e);
+
+        GamePage.show();
 
     }
 
