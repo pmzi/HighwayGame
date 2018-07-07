@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<GridPane fx:id="wrapper" fx:controller="sample.Controllers.LoadController"
+          xmlns:fx="http://javafx.com/fxml" alignment="CENTER_RIGHT" gridLinesVisible="false">
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="100" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="10" />
+        <RowConstraints percentHeight="10" />
+        <RowConstraints percentHeight="80" />
+    </rowConstraints>
+    <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <Label styleClass="titleLabel">
+            Load a game
+        </Label>
+    </HBox>
+    <HBox alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <Label styleClass="helpLabel">
+            Click on a game to load
+        </Label>
+    </HBox>
+    <TableView editable="true"  GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <columns>
+            <TableColumn minWidth="200" text="Game Name"/>
+            <TableColumn minWidth="200" text="Score"/>
+            <TableColumn minWidth="200" text="Time Pass"/>
+        </columns>
+
+    </TableView>
+
+</GridPane>
