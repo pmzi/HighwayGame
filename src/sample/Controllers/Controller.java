@@ -40,7 +40,7 @@ public class Controller {
     }
 
     @FXML
-    public void showSettingsPage(){
+    public void showSettingsPage(ActionEvent e){
         WindowHelper.hideCurrent(e);
 
         ReplyPage replyPage = new ReplyPage();
