@@ -57,13 +57,9 @@
                 <Insets right="10" />
             </padding>
 
-            <Label styleClass="roadLabel" text=" Speed: " />
+            <Button onAction="#showRoadSettings" styleClass="roadSettingsButton">
 
-            <TextField styleClass="roadTextField" />
-
-            <Label styleClass="roadLabel" text=" Random: " />
-
-            <TextField styleClass="roadTextField" />
+            </Button>
 
         </HBox>
 

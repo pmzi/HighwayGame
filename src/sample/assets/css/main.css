@@ -114,13 +114,26 @@ RoadWrapper
     -fx-background-color: black;
 }
 
-.roadLabel{
-    -fx-text-fill: black;
+.roadSettingsButton{
+    -fx-background-image: url("../images/icons/settings.png");
+    -fx-pref-width: 30px;
+    -fx-pref-height: 30px;
+    -fx-background-size: 20px 20px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius: 50;
+    -fx-border-width: 0px;
+    -fx-cursor: hand;
     -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
 }
 
-.roadTextField{
-    -fx-pref-width: 40;
+.roadSettingsButton:hover{
+    -fx-background-color: #F5F5F5;
+}
+.roadSettingsButton:armed{
+    -fx-scale-x: 0.9;
+    -fx-scale-y: 0.9;
 }
 
 .roadAside{
