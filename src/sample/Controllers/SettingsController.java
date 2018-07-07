@@ -235,6 +235,10 @@ public class SettingsController {
         return this.roadBridges;
     }
 
+    public ArrayList<Road> getRoads(){
+        return this.roadsElements;
+    }
+
     // Private methods
 
     private boolean checkRoadNumber(){
