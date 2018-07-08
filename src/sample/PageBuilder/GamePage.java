@@ -1,9 +1,11 @@
 package sample.PageBuilder;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -58,6 +60,17 @@ public class GamePage {
             controller.insertData();
 
             Scene scene = new Scene(root, 1600, 520);
+            scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+                @Override
+                public void handle(KeyEvent event) {
+                    switch (event.getCode()) {
+                        case UP:    controller.goUp(); break;
+                        case DOWN:  controller.goDown(); break;
+                        case LEFT:  controller.goLeft(); break;
+                        case RIGHT: controller.goRight(); break;
+                    }
+                }
+            });
             Stage stage = new Stage();
             stage.setTitle("Traffic Simulator");
             scene.getStylesheets().add("sample/assets/css/main.css");
