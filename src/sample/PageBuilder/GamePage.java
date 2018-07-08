@@ -63,11 +63,15 @@ public class GamePage {
             scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
                 @Override
                 public void handle(KeyEvent event) {
+                    System.out.println(event.getCode());
                     switch (event.getCode()) {
                         case UP:    controller.goUp();controller.personDidMove(); break;
                         case DOWN:  controller.goDown();controller.personDidMove(); break;
                         case LEFT:  controller.goLeft();controller.personDidMove(); break;
                         case RIGHT: controller.goRight();controller.personDidMove(); break;
+                        case DIGIT1: controller.switchPersons(0); break;
+                        case DIGIT2: controller.switchPersons(1); break;
+                        case DIGIT3: controller.switchPersons(2); break;
                     }
                 }
             });

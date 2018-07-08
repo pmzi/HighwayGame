@@ -214,6 +214,14 @@ public class GameController {
 
     }
 
+    public void switchPersons(int number){
+
+        if(number >= 0 && number <= this.persons){
+            this.selectedPerson = number;
+        }
+
+    }
+
     public void goUp(){
 
         if(this.personElements.get(this.selectedPerson).getPersonYPosition() == 0){

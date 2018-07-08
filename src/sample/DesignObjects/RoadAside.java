@@ -38,6 +38,7 @@ public class RoadAside extends DesignObject {
     private void createInsides(int persons){
         for(int i=0;i<persons;i++){
             Person person = new Person();
+            person.changePosition(i*40,-1);
             this.persons.add(person);
             roadAside.getChildren().add(person.get());
         }
