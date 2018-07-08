@@ -83,7 +83,7 @@
         </Label>
     </HBox>
 
-    <GridPane GridPane.columnIndex="0" GridPane.rowIndex="1" gridLinesVisible="false">
+    <GridPane fx:id="roadWrapper" GridPane.columnIndex="0" GridPane.rowIndex="1" gridLinesVisible="false">
 
         <columnConstraints>
             <ColumnConstraints percentWidth="100" />
@@ -124,7 +124,7 @@
 
         <!-- Main Items -->
 
-        <HBox GridPane.rowIndex="0" GridPane.columnIndex="0">
+        <HBox styleClass="roadAside" GridPane.rowIndex="0" GridPane.columnIndex="0">
 
         </HBox>
 
@@ -140,12 +140,12 @@
 
     </GridPane>
 
-    <VBox maxWidth="70" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="roadBridgeGamePage">
+    <!--<VBox maxWidth="70" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="roadBridgeGamePage">-->
 
-    </VBox>
+    <!--</VBox>-->
 
-    <VBox maxHeight="430" maxWidth="70" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="roadWayGamePage">
+    <!--<VBox maxHeight="430" maxWidth="70" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="roadWayGamePage">-->
 
-    </VBox>
+    <!--</VBox>-->
 
 </GridPane>

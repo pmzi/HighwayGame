@@ -62,6 +62,20 @@ public class RoadWay extends DesignObject {
         GridPane.setValignment(roadWay, VPos.CENTER);
     }
 
+    public void setColumnIndex(int columnIndex){
+        GridPane.setColumnIndex(roadWay, columnIndex);
+    }
+    public void setRowIndex(int rowIndex){
+        GridPane.setRowIndex(roadWay, rowIndex);
+    }
+    public void setStyleClass(String styleClass){
+        this.roadWay.getStyleClass().clear();
+        this.roadWay.getStyleClass().add(styleClass);
+    }
+    public void setMaxWidth(int maxWidth){
+        roadWay.setMaxWidth(maxWidth);
+    }
+
     public VBox get(){
         return this.roadWay;
     }

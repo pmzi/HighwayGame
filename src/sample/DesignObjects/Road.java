@@ -62,6 +62,13 @@ public class Road extends DesignObject{
         GridPane.setColumnIndex(road, 0);
     }
 
+    public void setRowIndex(int rowIndex){
+        GridPane.setRowIndex(this.road, rowIndex);
+    }
+    public int getRowIndex(){
+        return GridPane.getRowIndex(this.road);
+    }
+
     private void initEvents(){
         road.setOnMouseClicked(new EventHandler<MouseEvent>(){
 

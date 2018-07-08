@@ -179,7 +179,6 @@ RoadWrapper
     -fx-pref-width: 100;
     -fx-pref-height: 50;
     -fx-fill-height: 50px;
-    -fx-translate-x: 100;
     -fx-cursor: hand;
     -fx-background-image: url("../images/icons/way.png");
     -fx-background-size: 100% auto;
@@ -188,7 +187,6 @@ RoadWrapper
     -fx-pref-width: 200;
     -fx-pref-height: 50;
     -fx-fill-height: 50px;
-    -fx-translate-x: 200;
     -fx-cursor: hand;
     -fx-background-image: url("../images/icons/bridge.png");
     -fx-background-size: 100% 100%;

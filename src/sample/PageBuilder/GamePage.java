@@ -1,11 +1,13 @@
 package sample.PageBuilder;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import sample.Controllers.GameController;
 import sample.DesignObjects.Road;
 import sample.DesignObjects.RoadBridge;
 import sample.DesignObjects.RoadWay;
@@ -41,7 +43,21 @@ public class GamePage {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("../Views/game.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 1600, 520);
+
+            Parent root = (Parent) fxmlLoader.load();
+            GameController controller = fxmlLoader.getController();
+
+            controller.setBridges(this.bridges);
+            controller.setPersons(this.persons);
+            controller.setRoads(this.roads);
+            controller.setWays(this.ways);
+            controller.setRoadsElements(this.roadsElements);
+            controller.setRoadWays(this.roadWays);
+            controller.setRoadBridges(this.roadBridges);
+
+            controller.insertData();
+
+            Scene scene = new Scene(root, 1600, 520);
             Stage stage = new Stage();
             stage.setTitle("Traffic Simulator");
             scene.getStylesheets().add("sample/assets/css/main.css");

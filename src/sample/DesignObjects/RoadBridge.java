@@ -31,6 +31,10 @@ public class RoadBridge {
     public void changePosition(int x){
         roadBridge.setTranslateX(roadBridge.getTranslateX() + x);
     }
+    public int getPosition(){
+        return (int) roadBridge.getTranslateX();
+    }
+
 
     private void create(int highwayHeight){
         roadBridge.getStyleClass().add("roadBridge");
@@ -54,6 +58,20 @@ public class RoadBridge {
 
         return this.isSelected;
 
+    }
+
+    public void setRowIndex(int rowIndex){
+        GridPane.setRowIndex(roadBridge, rowIndex);
+    }
+    public void setColumnIndex(int columnIndex){
+        GridPane.setColumnIndex(roadBridge, columnIndex);
+    }
+    public void setStyleClass(String styleClass){
+        this.roadBridge.getStyleClass().clear();
+        this.roadBridge.getStyleClass().add(styleClass);
+    }
+    public void setMaxWidth(int maxWidth){
+        roadBridge.setMaxWidth(maxWidth);
     }
 
     public void unSelect(){
