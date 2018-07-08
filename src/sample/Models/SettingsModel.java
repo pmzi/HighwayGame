@@ -7,11 +7,13 @@ package sample.Models;
 
 import javafx.scene.layout.GridPane;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import sample.Controllers.SettingsController;
 import sample.DesignObjects.Road;
 import sample.DesignObjects.RoadBridge;
 import sample.DesignObjects.RoadWay;
 
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -79,4 +81,27 @@ public class SettingsModel {
         }
 
     }
+
+    public static JSONObject read(){
+
+        Path path = Paths.get("src/sample/DB/settings.json", new String[0]);
+        String newPath = path.toAbsolutePath().toString();
+
+        JSONParser parser = new JSONParser();
+
+        try {
+
+            Object obj = parser.parse(new FileReader(newPath));
+
+            JSONObject jsonObject = (JSONObject) obj;
+
+            return jsonObject;
+
+
+        }catch (Exception e){
+            return null;
+        }
+
+    }
+
 }

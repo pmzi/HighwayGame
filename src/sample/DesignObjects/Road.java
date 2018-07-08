@@ -25,17 +25,17 @@ public class Road extends DesignObject{
 
     }
 
-//    public void setRandomize(int randomize){
-//        this.randomize = randomize;
-//    }
-//
-//    public void setSpeedStart(int speedStart){
-//        this.speedStart = speedStart;
-//    }
-//
-//    public void setSpeedEnd(int speedEnd){
-//        this.speedEnd = speedEnd;
-//    }
+    public void setRandomize(int randomize){
+        this.randomize = randomize;
+    }
+
+    public void setSpeedStart(int speedStart){
+        this.speedStart = speedStart;
+    }
+
+    public void setSpeedEnd(int speedEnd){
+        this.speedEnd = speedEnd;
+    }
 
     public int getRandomize(){
         return this.randomize;
