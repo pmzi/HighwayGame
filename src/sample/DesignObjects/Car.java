@@ -13,6 +13,7 @@ public class Car extends DesignObject {
     private int currSpeed = 0;
     private int roadNumber = 0;
 
+    private boolean isHighSpeed = false;
     private boolean nearWay = false;
 
     int direction = 1;
@@ -69,6 +70,8 @@ public class Car extends DesignObject {
 
         if(this.nearWay){
             this.currSpeed /= 2;
+        }else if(this.isHighSpeed){
+            this.currSpeed *= 2;
         }
 
         if(direction == 1){
@@ -84,6 +87,15 @@ public class Car extends DesignObject {
     public void setNearWay(boolean nearWay){
         this.nearWay = nearWay;
     }
+
+    public void setHighSpeed(boolean isHighSpeed){
+        this.isHighSpeed = isHighSpeed;
+    }
+
+    public boolean getHighSpeed(){
+        return this.isHighSpeed;
+    }
+
 
     public void goUp(){
         this.roadNumber--;

@@ -43,7 +43,7 @@
                 </Insets>
             </HBox.margin>
         </Button>
-        <Button fx:id="speedIcon" styleClass="gameIconicButtons">
+        <Button onAction="#changeSpeed" fx:id="speedIcon" styleClass="gameIconicButtons,fast">
             <HBox.margin>
                 <Insets>
                     <right>10</right>

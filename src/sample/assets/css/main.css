@@ -305,8 +305,11 @@ For the game page
     -fx-background-image: url("../images/icons/turn-off.png");
 }
 
-#speedIcon{
+.fast{
     -fx-background-image: url("../images/icons/2x.png");
+}
+.slow{
+    -fx-background-image: url("../images/icons/1x.png");
 }
 
 .car{

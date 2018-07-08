@@ -46,6 +46,7 @@ public class GameController {
     private int roadHeight = 0;
 
     private boolean isPaused = false;
+    private boolean isHighSpeed = false;
 
     private Timer gameControllerTimer;
     private Timer carGeneratorTimer;
@@ -86,6 +87,8 @@ public class GameController {
     private Label timePassedText;
     @FXML
     private Button pauseIcon;
+    @FXML
+    private Button speedIcon;
 
     @FXML
     public void showSave(){
@@ -223,6 +226,24 @@ public class GameController {
             pauseIcon.getStyleClass().add("pauseIcon");
         }
         pauseIcon.getStyleClass().add("gameIconicButtons");
+    }
+
+    public void changeSpeed(){
+
+        this.isHighSpeed = !this.isHighSpeed;
+
+        for(Car carElement:carElements){
+            carElement.setHighSpeed(this.isHighSpeed);
+        }
+
+        speedIcon.getStyleClass().clear();
+        if(this.isHighSpeed){
+            speedIcon.getStyleClass().add("slow");
+        }else{
+            speedIcon.getStyleClass().add("fast");
+        }
+        speedIcon.getStyleClass().add("gameIconicButtons");
+
     }
 
     private void setScore(int score){
@@ -398,6 +419,7 @@ public class GameController {
                     }
 
                     Car car = new Car(30,50,roadNumber, direction);
+                    car.setHighSpeed(isHighSpeed);
 
                     carElements.add(car);
 
