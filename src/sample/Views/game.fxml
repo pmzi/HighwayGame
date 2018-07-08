@@ -29,7 +29,7 @@
                 </Insets>
             </HBox.margin>
         </Button>
-        <Button fx:id="pauseIcon" styleClass="gameIconicButtons">
+        <Button onAction="#pauseOrRun" fx:id="pauseIcon" styleClass="gameIconicButtons,pauseIcon">
             <HBox.margin>
                 <Insets>
                     <right>10</right>

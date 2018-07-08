@@ -45,6 +45,8 @@ public class GameController {
     private int selectedPerson = 0;
     private int roadHeight = 0;
 
+    private boolean isPaused = false;
+
     private Timer gameControllerTimer;
     private Timer carGeneratorTimer;
     private Timer timePassTimer;
@@ -82,6 +84,8 @@ public class GameController {
     private Label scoreText;
     @FXML
     private Label timePassedText;
+    @FXML
+    private Button pauseIcon;
 
     @FXML
     public void showSave(){
@@ -208,6 +212,19 @@ public class GameController {
 
     }
 
+    public void pauseOrRun(){
+        this.isPaused = !this.isPaused;
+
+        if(this.isPaused){
+            pauseIcon.getStyleClass().clear();
+            pauseIcon.getStyleClass().add("runIcon");
+        }else{
+            pauseIcon.getStyleClass().clear();
+            pauseIcon.getStyleClass().add("pauseIcon");
+        }
+        pauseIcon.getStyleClass().add("gameIconicButtons");
+    }
+
     private void setScore(int score){
         this.score += score;
         //
@@ -258,6 +275,10 @@ public class GameController {
 
     public void goUp(){
 
+        if(isPaused){
+            return;
+        }
+
         if(this.personElements.get(this.selectedPerson).getPersonYPosition() == 0){
             this.personElements.get(this.selectedPerson).changePosition(-1, (int) -1* ((roadHeight/2) + (this.roadAsideHeight / 2)));
         }else if(this.personElements.get(this.selectedPerson).getPersonYPosition() == this.roads){
@@ -272,6 +293,10 @@ public class GameController {
 
     public void goDown(){
 
+        if(isPaused){
+            return;
+        }
+
         if(this.personElements.get(this.selectedPerson).getPersonYPosition() == 1){
             this.personElements.get(this.selectedPerson).changePosition(-1, (int) +1* ((roadHeight/2) + (this.roadAsideHeight / 2)));
         }else if(this.personElements.get(this.selectedPerson).getPersonYPosition() == this.roads + 1){
@@ -285,12 +310,22 @@ public class GameController {
     }
 
     public void goRight(){
+
+        if(isPaused){
+            return;
+        }
+
         if(!onBridge(this.personElements.get(this.selectedPerson))){
             this.personElements.get(this.selectedPerson).changePosition(10, -1);
         }
     }
 
     public void goLeft(){
+
+        if(isPaused){
+            return;
+        }
+
         if(!onBridge(this.personElements.get(this.selectedPerson))){
             this.personElements.get(this.selectedPerson).changePosition(-10, -1);
         }
@@ -336,6 +371,9 @@ public class GameController {
             @Override
             public void run() {
                 Platform.runLater(() -> {
+                    if(isPaused){
+                        return;
+                    }
                     changeTime();
                 });
             }
@@ -348,6 +386,10 @@ public class GameController {
             @Override
             public void run() {
                 Platform.runLater(() -> {
+
+                    if(isPaused){
+                        return;
+                    }
 
                     int roadNumber = new Random().nextInt(roads*2) + 1;
                     int direction = 0;
@@ -383,6 +425,10 @@ public class GameController {
             @Override
             public void run() {
                 Platform.runLater(() -> {
+
+                    if(isPaused){
+                        return;
+                    }
 
                     for(Car carElement:carElements){
                         carElement.move();
