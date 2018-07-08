@@ -430,16 +430,24 @@ public class GameController {
                             if((roads*2 - person.getPersonYPosition())+1 != carElement.getRoadNumber()){
                                 continue;
                             }
+
+                            // check for road bridge
+
                             System.out.println(person.get().getTranslateX());
                             if(carElement.getDirection() == 1){// to left
                                 if(person.get().getTranslateX() - carElement.getPosition() < 10 && person.get().getTranslateX() - carElement.getPosition() > -10){
-                                    stopAll();
-                                    showFinisher();
+                                    // check whether person is on bridge or not
+                                    if(!onBridge(person)){
+                                        stopAll();
+                                        showFinisher();
+                                    }
                                 }
                             }else{
                                 if(carElement.getPosition() - person.get().getTranslateX() < 10 && carElement.getPosition() - person.get().getTranslateX() > -10){
-                                    stopAll();
-                                    showFinisher();
+                                    if(!onBridge(person)){
+                                        stopAll();
+                                        showFinisher();
+                                    }
                                 }
                             }
 
@@ -508,6 +516,20 @@ public class GameController {
     private FinishModalController showWin(){
         FinishModal finishModal = new FinishModal();
         return finishModal.show();
+    }
+
+    private boolean onBridge(Person person){
+
+        for(RoadBridge roadBridge:roadBridges){
+
+            if(roadBridge.getPosition() - person.get().getTranslateX() <= 45){
+                return true;
+            }
+
+        }
+
+        return false;
+
     }
 
 }
