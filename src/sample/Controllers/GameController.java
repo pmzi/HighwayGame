@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
@@ -39,7 +40,7 @@ public class GameController {
     private int bridges = 0;
 
     private int score = 0;
-    private int timePassed = 0;
+    private int timePassed = 1;
 
     private int selectedPerson = 0;
     private int roadHeight = 0;
@@ -77,6 +78,8 @@ public class GameController {
     private GridPane roadWrapper;
     @FXML
     private GridPane wrapper;
+    @FXML
+    private Label scoreText;
 
     @FXML
     public void showSave(){
@@ -203,6 +206,12 @@ public class GameController {
 
     }
 
+    public void setScore(int score){
+        this.score += score;
+        //
+        scoreText.setText(Integer.toString(this.score));
+    }
+
     public void sceneDidMount(){
         this.roadHeight = (int) this.roadsElements.get(0).get().getLayoutBounds().getHeight();
         this.roadAsideHeight = (int) this.roadAsideDown.get().getLayoutBounds().getHeight();
@@ -251,17 +260,32 @@ public class GameController {
     }
 
     public void goRight(){
-        this.personElements.get(this.selectedPerson).changePosition(10, -1);
+        if(!onBridge(this.personElements.get(this.selectedPerson))){
+            this.personElements.get(this.selectedPerson).changePosition(10, -1);
+        }
     }
 
     public void goLeft(){
-        this.personElements.get(this.selectedPerson).changePosition(-10, -1);
+        if(!onBridge(this.personElements.get(this.selectedPerson))){
+            this.personElements.get(this.selectedPerson).changePosition(-10, -1);
+        }
     }
 
     public void personDidMove(){
         int personsInAside = 0;
         for(Person person:personElements){
             if(person.getPersonYPosition() == this.roads*2 + 1){
+
+                if(!person.getDidPass()){
+                    person.setDidPass(true);
+                    if(onBridge(person)){
+                        this.setScore(1000 / this.timePassed);
+                    }else{
+                        this.setScore(5000 / this.timePassed);
+                    }
+
+                }
+
                 personsInAside++;
             }
         }
@@ -522,7 +546,7 @@ public class GameController {
 
         for(RoadBridge roadBridge:roadBridges){
 
-            if(roadBridge.getPosition() - person.get().getTranslateX() <= 45){
+            if(roadBridge.getPosition() - person.get().getTranslateX() <= 45 && person.getPersonYPosition() != 0){
                 return true;
             }
 

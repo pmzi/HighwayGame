@@ -61,7 +61,7 @@
         <Label fx:id="scoreIcon" styleClass="iconicLabel">
 
         </Label>
-        <Label styleClass="iconicLabelValue">
+        <Label fx:id="scoreText" styleClass="iconicLabelValue">
             100000
             <HBox.margin>
                 <Insets>

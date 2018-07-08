@@ -9,12 +9,22 @@ public class Person extends DesignObject {
 
     private Label person = new Label();
 
+    private boolean didPass = false;
+
     private int personYPosition = 0;
 
     public Person(){
 
         this.create();
 
+    }
+
+    public void setDidPass(boolean didPass){
+        this.didPass = didPass;
+    }
+
+    public boolean getDidPass(){
+        return didPass;
     }
 
     public int getPersonYPosition(){
