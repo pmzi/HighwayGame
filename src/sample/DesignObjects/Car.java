@@ -66,6 +66,10 @@ public class Car extends DesignObject {
         return this.direction;
     }
 
+    public int getPrimarySpeed(){
+        return  this.primarySpeed;
+    }
+
     public void move(){
 
         if(this.nearWay){

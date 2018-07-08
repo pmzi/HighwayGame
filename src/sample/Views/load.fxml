@@ -28,11 +28,11 @@
             Click on a game to load
         </Label>
     </HBox>
-    <TableView editable="true"  GridPane.columnIndex="0" GridPane.rowIndex="2">
+    <TableView fx:id="tableView" editable="true"  GridPane.columnIndex="0" GridPane.rowIndex="2">
         <columns>
-            <TableColumn minWidth="200" text="Game Name"/>
-            <TableColumn minWidth="200" text="Score"/>
-            <TableColumn minWidth="200" text="Time Pass"/>
+            <TableColumn fx:id="nameCol" minWidth="200" text="Game Name"/>
+            <TableColumn fx:id="scoreCol" minWidth="200" text="Score"/>
+            <TableColumn fx:id="timePassedCol" minWidth="200" text="Time Pass"/>
         </columns>
 
     </TableView>

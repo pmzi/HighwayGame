@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import sample.DesignObjects.*;
 import sample.Helpers.MusicPlayer;
 import sample.Models.RankingModel;
+import sample.Models.SaveModel;
 import sample.PageBuilder.FinishModal;
 import sample.PageBuilder.LostModal;
 import sample.PageBuilder.MainPage;
@@ -77,7 +78,12 @@ public class GameController {
     public void setBridges(int bridges){
         this.bridges = bridges;
     }
-
+    public void setPersonElements(ArrayList<Person> personElements){
+        this.personElements = personElements;
+    }
+    public void setCarElements(ArrayList<Car> carElements){
+        this.carElements = carElements;
+    }
 
     @FXML
     private Button exitIcon;
@@ -100,7 +106,17 @@ public class GameController {
     public void showSave(){
 
         SaveModal saveModal = new SaveModal();
-        saveModal.show();
+        SaveModalController controller = saveModal.show();
+        if(controller.saveTextField.getText().equals("")){
+            return;
+        }
+        SaveModel.save(this, controller.saveTextField.getText());
+
+        Stage stage = (Stage) wrapper.getScene().getWindow();
+        stage.close();
+
+        MainPage mainPage = new MainPage();
+        mainPage.show();
 
     }
 
@@ -118,6 +134,34 @@ public class GameController {
             Platform.exit();
         }
 
+    }
+
+    public ArrayList<Person> getPersons(){
+        return this.personElements;
+    }
+
+    public ArrayList<RoadWay> getRoadWays(){
+        return this.roadWays;
+    }
+
+    public ArrayList<RoadBridge> getRoadBridges(){
+        return this.roadBridges;
+    }
+
+    public ArrayList<Road> getRoads(){
+        return this.roadsElements;
+    }
+
+    public ArrayList<Car> getCars(){
+        return this.carElements;
+    }
+
+    public int getScore(){
+        return this.score;
+    }
+
+    public int getTimePassed(){
+        return this.timePassed;
     }
 
     public void insertData(){
@@ -162,18 +206,24 @@ public class GameController {
         roadWrapper.getRowConstraints().add(roadAside2Constraint);
 
         // Let's add actual roads
-        int k =0;
-        int j =0;
-        for(int i = 0;i < this.roads*2;i++){
-            if(this.roadsElements.get(i).getRowIndex() < 4){
-                // upper ones
-                roadsElements.get(i).setRowIndex(this.roads - k);
+        if(this.personElements.size() == 0){
+            int k =0;
+            int j =0;
+            for(int i = 0;i < this.roads*2;i++){
+                if(this.roadsElements.get(i).getRowIndex() < 4){
+                    // upper ones
+                    roadsElements.get(i).setRowIndex(this.roads - k);
+                    roadWrapper.getChildren().add(roadsElements.get(i).get());
+                    k++;
+                }else{
+                    roadsElements.get(i).setRowIndex(this.roads + 2 + j);
+                    roadWrapper.getChildren().add(roadsElements.get(i).get());
+                    j++;
+                }
+            }
+        }else{
+            for(int i = 0;i < this.roads*2;i++){
                 roadWrapper.getChildren().add(roadsElements.get(i).get());
-                k++;
-            }else{
-                roadsElements.get(i).setRowIndex(this.roads + 2 + j);
-                roadWrapper.getChildren().add(roadsElements.get(i).get());
-                j++;
             }
         }
 
@@ -185,9 +235,17 @@ public class GameController {
         // Let's append roadAsides
 
         RoadAside roadAside1 = new RoadAside(0,0);
-        RoadAside roadAside2 = new RoadAside((this.roads * 2) + 2, this.persons);
+        RoadAside roadAside2;
+        if(this.personElements.size() == 0){
+            roadAside2 = new RoadAside((this.roads * 2) + 2, this.persons);
 
-        this.personElements = roadAside2.getPersons();
+            this.personElements = roadAside2.getPersons();
+        }else{
+            roadAside2 = new RoadAside((this.roads * 2) + 2, 0);
+
+            roadAside2.setPersons(this.personElements);
+        }
+
 
         roadWrapper.getChildren().addAll(roadAside1.get(),roadAside2.get());
 
@@ -589,7 +647,6 @@ public class GameController {
 
                             // check for road bridge
 
-                            System.out.println(person.get().getTranslateX());
                             if(carElement.getDirection() == 1){// to left
                                 if(person.get().getTranslateX() - carElement.getPosition() < 10 && person.get().getTranslateX() - carElement.getPosition() > -10){
                                     // check whether person is on bridge or not

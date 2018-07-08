@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -47,8 +46,8 @@ public class MainPage extends Application {
             scene.getStylesheets().add("sample/assets/css/main.css");
             stage.setScene(scene);
             stage.getIcons().add(new Image("sample/assets/images/icon.png"));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.showAndWait();
+            stage.show();
+
         }catch (IOException e){
             e.printStackTrace();
         }

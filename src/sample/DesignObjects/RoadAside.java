@@ -44,8 +44,22 @@ public class RoadAside extends DesignObject {
         }
     }
 
+    private void appendInsides(){
+
+        for(int i=0;i<this.persons.size();i++){
+            System.out.printf("%f %f\n",this.persons.get(i).get().getTranslateX(),this.persons.get(i).get().getTranslateY());
+            roadAside.getChildren().add(this.persons.get(i).get());
+        }
+
+    }
+
     public ArrayList<Person> getPersons(){
         return this.persons;
+    }
+
+    public void setPersons(ArrayList<Person> persons){
+        this.persons = persons;
+        this.appendInsides();
     }
 
     public GridPane get(){
