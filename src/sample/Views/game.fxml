@@ -112,13 +112,13 @@
 
         <HBox styleClass="road" GridPane.rowIndex="5" GridPane.columnIndex="0">
 
-            <Label styleClass="car">
-                <graphic>
-                    <ImageView>
-                        <Image url="@../assets/images/cars/right/car.png" />
-                    </ImageView>
-                </graphic>
-            </Label>
+            <!--<Label styleClass="car,simpleCar">-->
+                <!--<graphic>-->
+                    <!--<ImageView>-->
+                        <!--<Image url="@../assets/images/cars/right/car.png" />-->
+                    <!--</ImageView>-->
+                <!--</graphic>-->
+            <!--</Label>-->
 
         </HBox>
 

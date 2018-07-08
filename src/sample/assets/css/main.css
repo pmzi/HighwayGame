@@ -310,6 +310,21 @@ For the game page
 .car{
     -fx-pref-width: 80;
     -fx-pref-height: 80;
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.rightCar{
+    -fx-translate-x: 1600px;
+}
+
+.leftCar{
+    -fx-translate-x: -64px;
+}
+
+.simpleCar{
+    -fx-background-image: url("../images/cars/right/car.png");
 }
 
 .titleLabel{

@@ -1,10 +1,8 @@
 package sample.DesignObjects;
 
 import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import sample.Controllers.RoadSettingsController;
 import sample.PageBuilder.RoadSettingsModal;
 
@@ -13,7 +11,7 @@ import sample.PageBuilder.RoadSettingsModal;
  */
 public class Road extends DesignObject{
 
-    private HBox road = new HBox();
+    private GridPane road = new GridPane();
     private int randomize=1;
     private int speedStart=10;
     private int speedEnd=20;
@@ -51,10 +49,6 @@ public class Road extends DesignObject{
 
     private void create(int rowPosition){
 
-        road.setAlignment(Pos.CENTER_RIGHT);
-
-        road.setSpacing(10);
-
         road.getStyleClass().add("road");
 
         GridPane.setRowIndex(road, rowPosition);
@@ -90,7 +84,7 @@ public class Road extends DesignObject{
         });
     }
 
-    public HBox get(){
+    public GridPane get(){
         return this.road;
     }
 

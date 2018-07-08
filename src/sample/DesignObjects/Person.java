@@ -9,10 +9,19 @@ public class Person extends DesignObject {
 
     private Label person = new Label();
 
+    private int personYPosition = 0;
+
     public Person(){
 
         this.create();
 
+    }
+
+    public int getPersonYPosition(){
+        return personYPosition;
+    }
+    public void setPersonYPosition(int personYPosition){
+        this.personYPosition += personYPosition;
     }
 
     private void create(){
@@ -21,9 +30,9 @@ public class Person extends DesignObject {
 
     public void changePosition(int x, int y){
         if(x == -1){
-            this.person.setTranslateY(y);
+            this.person.setTranslateY(this.person.getTranslateY() + y);
         }else if(y == -1){
-            this.person.setTranslateX(x);
+            this.person.setTranslateX(this.person.getTranslateX() + x);
         }
 
     }

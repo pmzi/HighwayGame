@@ -78,6 +78,8 @@ public class GamePage {
             stage.setScene(scene);
             stage.show();
 
+            controller.sceneDidMount();
+
         }catch (IOException e){
             e.printStackTrace();
         }

@@ -7,14 +7,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
-import sample.DesignObjects.Road;
-import sample.DesignObjects.RoadAside;
-import sample.DesignObjects.RoadBridge;
-import sample.DesignObjects.RoadWay;
+import sample.DesignObjects.*;
 import sample.PageBuilder.SaveModal;
 
-import java.util.ArrayList;
-import java.util.Optional;
+import java.util.*;
 
 
 public class GameController {
@@ -22,11 +18,24 @@ public class GameController {
     private ArrayList<Road> roadsElements = new ArrayList<>();
     private ArrayList<RoadWay> roadWays = new ArrayList<>();
     private ArrayList<RoadBridge> roadBridges = new ArrayList<>();
+    private ArrayList<Person> personElements = new ArrayList<>();
+
+    private ArrayList<Car> carElements = new ArrayList<>();
+
+    private RoadAside roadAsideDown;
+    private int roadAsideHeight = 0;
+
+    private RoadMiddleware roadMiddleware;
+    private int roadMiddlewareHeight;
 
     private int persons = 0;
     private int roads = 0;
     private int ways = 0;
     private int bridges = 0;
+
+    private int selectedPerson = 0;
+    private int roadHeight = 0;
+
 
     public void setRoadsElements(ArrayList<Road> roadsElements){
         this.roadsElements = roadsElements;
@@ -139,10 +148,17 @@ public class GameController {
             }
         }
 
+        // Let's add road middleware
+
+        RoadMiddleware roadMiddleware = new RoadMiddleware(this.roads+1);
+        roadWrapper.getChildren().add(roadMiddleware.get());
+
         // Let's append roadAsides
 
         RoadAside roadAside1 = new RoadAside(0,0);
         RoadAside roadAside2 = new RoadAside((this.roads * 2) + 2, this.persons);
+
+        this.personElements = roadAside2.getPersons();
 
         roadWrapper.getChildren().addAll(roadAside1.get(),roadAside2.get());
 
@@ -168,7 +184,146 @@ public class GameController {
             wrapper.getChildren().add(this.roadBridges.get(i).get());
         }
 
+        this.roadAsideDown = roadAside2;
+
+        this.roadMiddleware = roadMiddleware;
+
         // We are good to go!
+
+    }
+
+    public void sceneDidMount(){
+        this.roadHeight = (int) this.roadsElements.get(0).get().getLayoutBounds().getHeight();
+        this.roadAsideHeight = (int) this.roadAsideDown.get().getLayoutBounds().getHeight();
+        this.roadMiddlewareHeight = (int) this.roadMiddleware.get().getLayoutBounds().getHeight();
+
+        this.initCarGenerator();
+
+        this.initCarController();
+
+    }
+
+    public void goUp(){
+
+        if(this.personElements.get(this.selectedPerson).getPersonYPosition() == 0){
+            this.personElements.get(this.selectedPerson).changePosition(-1, (int) -1* ((roadHeight/2) + (this.roadAsideHeight / 2)));
+        }else if(this.personElements.get(this.selectedPerson).getPersonYPosition() == this.roads){
+            this.personElements.get(this.selectedPerson).changePosition(-1, (int) -1* (roadHeight + this.roadMiddlewareHeight));
+        }
+        else{
+            this.personElements.get(this.selectedPerson).changePosition(-1, (int) -1 * roadHeight);
+        }
+        this.personElements.get(this.selectedPerson).setPersonYPosition(+1);
+
+    }
+
+    public void goDown(){
+
+        if(this.personElements.get(this.selectedPerson).getPersonYPosition() == 1){
+            this.personElements.get(this.selectedPerson).changePosition(-1, (int) +1* ((roadHeight/2) + (this.roadAsideHeight / 2)));
+        }else if(this.personElements.get(this.selectedPerson).getPersonYPosition() == this.roads + 1){
+            this.personElements.get(this.selectedPerson).changePosition(-1, (int) +1* (roadHeight + this.roadMiddlewareHeight));
+        }
+        else{
+            this.personElements.get(this.selectedPerson).changePosition(-1, (int) +1 * roadHeight);
+        }
+        this.personElements.get(this.selectedPerson).setPersonYPosition(-1);
+
+    }
+
+    public void goRight(){
+        this.personElements.get(this.selectedPerson).changePosition(10, -1);
+    }
+
+    public void goLeft(){
+        this.personElements.get(this.selectedPerson).changePosition(-10, -1);
+    }
+
+    public void initCarGenerator(){
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+
+                    int roadNumber = new Random().nextInt(roads*2) + 1;
+                    int direction = 0;
+                    if(roadNumber < roads +1){
+                        direction = 1;
+                    }
+
+                    Car car = new Car(10,50,roadNumber, direction);
+
+                    carElements.add(car);
+
+                    for(Road roadElement:roadsElements){
+                        if(roadElement.getRowIndex() < roads+1){
+                            if(roadElement.getRowIndex() == roadNumber){
+                                roadElement.get().getChildren().add(car.get());
+                            }
+                        }else{
+                            if(roadElement.getRowIndex() - 1 == roadNumber){
+                                roadElement.get().getChildren().add(car.get());
+                            }
+                        }
+                    }
+
+                });
+            }
+        }, 100, 5000);
+    }
+
+    public void initCarController(){
+
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+
+                    for(Car carElement:carElements){
+                        carElement.move();
+                    }
+
+                    // check car front
+
+                    for(Car carElement:carElements){
+                        for(Car singleCar:carElements){
+
+                            if(carElement == singleCar){
+                                continue;
+                            }
+
+                            if(carElement.getRoadNumber() == singleCar.getRoadNumber()){
+                                if(carElement.getDirection() == 1){// to left
+                                    if(singleCar.getPosition() - carElement.getPosition() < 100 && singleCar.getPosition() - carElement.getPosition() > 0){
+                                        // do sth
+                                        System.out.println(singleCar.getPosition() - carElement.getPosition());
+                                        if(carElement.getRoadNumber() != 1){
+                                            singleCar.goUp(roadHeight);
+                                        }else{
+                                            singleCar.setCurrSpeed(carElement.getCurrSpeed());
+                                        }
+                                    }
+                                }else{// to right
+                                    if(carElement.getPosition() - singleCar.getPosition() < 100 && carElement.getPosition() - singleCar.getPosition()>0){
+                                        // do sth
+                                        System.out.println(carElement.getPosition() - singleCar.getPosition());
+                                        if(carElement.getRoadNumber() != roads+1){
+                                            singleCar.goUp(roadHeight);
+                                        }else{
+                                            singleCar.setCurrSpeed(carElement.getCurrSpeed());
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+                });
+            }
+        }, 100, 100);
 
     }
 
