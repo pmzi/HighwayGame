@@ -7,7 +7,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
+import javafx.stage.Stage;
 import sample.DesignObjects.*;
+import sample.Models.RankingModel;
+import sample.PageBuilder.FinishModal;
+import sample.PageBuilder.LostModal;
+import sample.PageBuilder.MainPage;
 import sample.PageBuilder.SaveModal;
 
 import java.util.*;
@@ -33,8 +38,14 @@ public class GameController {
     private int ways = 0;
     private int bridges = 0;
 
+    private int score = 0;
+    private int timePassed = 0;
+
     private int selectedPerson = 0;
     private int roadHeight = 0;
+
+    private Timer gameControllerTimer;
+    private Timer carGeneratorTimer;
 
 
     public void setRoadsElements(ArrayList<Road> roadsElements){
@@ -239,9 +250,32 @@ public class GameController {
         this.personElements.get(this.selectedPerson).changePosition(-10, -1);
     }
 
-    public void initCarGenerator(){
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
+    public void personDidMove(){
+        int personsInAside = 0;
+        for(Person person:personElements){
+            if(person.getPersonYPosition() == this.roads*2 + 1){
+                personsInAside++;
+            }
+        }
+        if(personsInAside == this.persons){
+            this.stopAll();
+            FinishModalController finisherController = this.showWin();
+            String saveName = finisherController.saveText.getText();
+
+            RankingModel.save(saveName, this.score, this.timePassed);
+
+            Stage stage = (Stage) wrapper.getScene().getWindow();
+            stage.close();
+
+            MainPage mainPage = new MainPage();
+            mainPage.show();
+
+        }
+    }
+
+    private void initCarGenerator(){
+        this.carGeneratorTimer = new Timer();
+        carGeneratorTimer.schedule(new TimerTask() {
             @Override
             public void run() {
                 Platform.runLater(() -> {
@@ -273,10 +307,10 @@ public class GameController {
         }, 100, 5000);
     }
 
-    public void initCarController(){
+    private void initCarController(){
 
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
+        this.gameControllerTimer = new Timer();
+        gameControllerTimer.schedule(new TimerTask() {
             @Override
             public void run() {
                 Platform.runLater(() -> {
@@ -367,19 +401,42 @@ public class GameController {
 
                             for(RoadWay roadWay:roadWays){
                                 if(carElement.getDirection() == 1){// to left
-                                    if(roadWay.get().getTranslateX() - carElement.getPosition() < 100 && roadWay.get().getTranslateX() - carElement.getPosition() > -100){
+                                    if(roadWay.get().getTranslateX() - carElement.getPosition() < 60 && roadWay.get().getTranslateX() - carElement.getPosition() > -60){
                                         carElement.setNearWay(true);
                                     }else{
                                         carElement.setNearWay(false);
                                     }
                                 }else{
-                                    if(carElement.getPosition() - roadWay.get().getTranslateX() < 100 && carElement.getPosition() - roadWay.get().getTranslateX() > -100){
+                                    if(carElement.getPosition() - roadWay.get().getTranslateX() < 60 && carElement.getPosition() - roadWay.get().getTranslateX() > -60){
                                         carElement.setNearWay(true);
                                     }else{
                                         carElement.setNearWay(false);
                                     }
                                 }
                             }
+
+                        // checking for person crash
+
+                        for(Person person:personElements){
+
+                            if((roads*2 - person.getPersonYPosition())+1 != carElement.getRoadNumber()){
+                                continue;
+                            }
+                            System.out.println(person.get().getTranslateX());
+                            if(carElement.getDirection() == 1){// to left
+                                if(person.get().getTranslateX() - carElement.getPosition() < 10 && person.get().getTranslateX() - carElement.getPosition() > -10){
+                                    stopAll();
+                                    showFinisher();
+                                }
+                            }else{
+                                if(carElement.getPosition() - person.get().getTranslateX() < 10 && carElement.getPosition() - person.get().getTranslateX() > -10){
+                                    stopAll();
+                                    showFinisher();
+                                }
+                            }
+
+                        }
+
 
 
                     }
@@ -390,7 +447,7 @@ public class GameController {
 
     }
 
-    public void removeCar(Car car){
+    private void removeCar(Car car){
         for(Road roadElement:roadsElements){
             if(roadElement.getRowIndex() < roads+1){
                 if(roadElement.getRowIndex() == car.getRoadNumber()){
@@ -404,7 +461,7 @@ public class GameController {
         }
     }
 
-    public void addCarToRow(Car car, int roadNumber, int tranlsateX){
+    private void addCarToRow(Car car, int roadNumber, int tranlsateX){
         for(Road roadElement:roadsElements){
             if(roadElement.getRowIndex() < roads+1){
                 if(roadElement.getRowIndex() == roadNumber){
@@ -418,6 +475,31 @@ public class GameController {
                 }
             }
         }
+    }
+
+    private void stopAll(){
+
+        this.gameControllerTimer.cancel();
+        this.carGeneratorTimer.cancel();
+
+        for(Car carElement:carElements){
+            carElement.stop();
+        }
+    }
+
+    private void showFinisher(){
+
+        LostModal lostModal = new LostModal();
+        lostModal.show();
+
+        Stage stage = (Stage) wrapper.getScene().getWindow();
+        stage.close();
+
+    }
+
+    private FinishModalController showWin(){
+        FinishModal finishModal = new FinishModal();
+        return finishModal.show();
     }
 
 }

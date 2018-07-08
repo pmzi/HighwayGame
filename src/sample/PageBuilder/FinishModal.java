@@ -1,6 +1,7 @@
 package sample.PageBuilder;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
@@ -14,12 +15,14 @@ import java.io.IOException;
 public class FinishModal {
 
     public <T> T show(){
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("../Views/finishModal.fxml"));
-        T controller = fxmlLoader.getController(); // Retrieve the controller
         try{
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("../Views/finishModal.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            T controller = fxmlLoader.getController(); // Retrieve the controller
 
-            Scene scene = new Scene(fxmlLoader.load(), 800, 327);
+
+            Scene scene = new Scene(root, 800, 327);
             Stage stage = new Stage();
             stage.setTitle("Save Your Score");
             scene.getStylesheets().add("sample/assets/css/modal.css");
@@ -30,9 +33,8 @@ public class FinishModal {
             return controller;
         }catch (IOException e){
             e.printStackTrace();
+            return null;
         }
-
-        return controller;
 
     }
 

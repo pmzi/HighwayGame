@@ -1,8 +1,6 @@
 package sample.DesignObjects;
 
-import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 
 import java.util.ArrayList;
 
@@ -11,7 +9,7 @@ import java.util.ArrayList;
  */
 public class RoadAside extends DesignObject {
 
-    private HBox roadAside = new HBox();
+    private GridPane roadAside = new GridPane();
     private ArrayList<Person> persons = new ArrayList<>();
 
     public RoadAside(int rowPosition, int persons){
@@ -23,13 +21,7 @@ public class RoadAside extends DesignObject {
 
     private void create(int rowPosition){
 
-        roadAside.setAlignment(Pos.CENTER_RIGHT);
-
-        roadAside.setSpacing(10);
-
         roadAside.getStyleClass().add("rowAside");
-
-        roadAside.setAlignment(Pos.CENTER);
 
         GridPane.setRowIndex(roadAside, rowPosition);
 
@@ -55,7 +47,7 @@ public class RoadAside extends DesignObject {
         return this.persons;
     }
 
-    public HBox get(){
+    public GridPane get(){
         return this.roadAside;
     }
 

@@ -5,7 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class MainPage extends Application {
 
@@ -31,5 +34,23 @@ public class MainPage extends Application {
 
     public static void launchIt() {
         launch();
+    }
+
+    public void show(){
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("../Views/main.fxml"));
+        try{
+
+            Scene scene = new Scene(fxmlLoader.load(), 600, 520);
+            Stage stage = new Stage();
+            stage.setTitle("Traffic Simulator");
+            scene.getStylesheets().add("sample/assets/css/main.css");
+            stage.setScene(scene);
+            stage.getIcons().add(new Image("sample/assets/images/icon.png"));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }

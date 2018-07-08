@@ -64,10 +64,10 @@ public class GamePage {
                 @Override
                 public void handle(KeyEvent event) {
                     switch (event.getCode()) {
-                        case UP:    controller.goUp(); break;
-                        case DOWN:  controller.goDown(); break;
-                        case LEFT:  controller.goLeft(); break;
-                        case RIGHT: controller.goRight(); break;
+                        case UP:    controller.goUp();controller.personDidMove(); break;
+                        case DOWN:  controller.goDown();controller.personDidMove(); break;
+                        case LEFT:  controller.goLeft();controller.personDidMove(); break;
+                        case RIGHT: controller.goRight();controller.personDidMove(); break;
                     }
                 }
             });

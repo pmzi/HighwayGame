@@ -101,4 +101,8 @@ public class Car extends DesignObject {
         return this.currSpeed;
     }
 
+    public void stop(){
+        this.currSpeed = 0;
+    }
+
 }
