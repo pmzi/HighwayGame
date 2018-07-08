@@ -19,6 +19,15 @@ public class Person extends DesignObject {
         person.getStyleClass().add("person");
     }
 
+    public void changePosition(int x, int y){
+        if(x == -1){
+            this.person.setTranslateY(y);
+        }else if(y == -1){
+            this.person.setTranslateX(x);
+        }
+
+    }
+
     public Label get(){
         return this.person;
     }
