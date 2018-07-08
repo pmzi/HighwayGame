@@ -252,7 +252,7 @@ public class GameController {
                         direction = 1;
                     }
 
-                    Car car = new Car(10,50,roadNumber, direction);
+                    Car car = new Car(30,50,roadNumber, direction);
 
                     carElements.add(car);
 
@@ -300,7 +300,28 @@ public class GameController {
                                         // do sth
                                         System.out.println(singleCar.getPosition() - carElement.getPosition());
                                         if(carElement.getRoadNumber() != 1){
-                                            singleCar.goUp(roadHeight);
+                                            boolean hasSpace = true;
+                                            for(Car upperCar:carElements){
+                                                if(singleCar.getRoadNumber() - upperCar.getRoadNumber() != 1){
+                                                    continue;
+                                                }
+
+                                                if(singleCar.getPosition() - upperCar.getPosition() < 100 && singleCar.getPosition() - upperCar.getPosition() > 0){
+                                                    hasSpace = false;
+                                                    break;
+                                                }
+
+                                            }
+                                            if(hasSpace){
+                                                int translateX = (int) singleCar.get().getTranslateX();
+                                                removeCar(singleCar);
+                                                addCarToRow(singleCar, singleCar.getRoadNumber()-1, translateX);
+                                                singleCar.goUp();
+//                                                singleCar.goUp(roadHeight);
+                                            }else{
+                                                singleCar.setCurrSpeed(carElement.getCurrSpeed());
+                                            }
+
                                         }else{
                                             singleCar.setCurrSpeed(carElement.getCurrSpeed());
                                         }
@@ -310,7 +331,28 @@ public class GameController {
                                         // do sth
                                         System.out.println(carElement.getPosition() - singleCar.getPosition());
                                         if(carElement.getRoadNumber() != roads+1){
-                                            singleCar.goUp(roadHeight);
+
+                                            boolean hasSpace = true;
+                                            for(Car upperCar:carElements){
+                                                if(singleCar.getRoadNumber() - upperCar.getRoadNumber() != 1){
+                                                    continue;
+                                                }
+
+                                                if(singleCar.getPosition() - upperCar.getPosition() < 100 && singleCar.getPosition() - upperCar.getPosition() > 0){
+                                                    hasSpace = false;
+                                                    break;
+                                                }
+
+                                            }
+                                            if(hasSpace){
+                                                int translateX = (int) singleCar.get().getTranslateX();
+                                                removeCar(singleCar);
+                                                addCarToRow(singleCar, singleCar.getRoadNumber()-1,translateX);
+                                                singleCar.goUp();
+                                            }else{
+                                                singleCar.setCurrSpeed(carElement.getCurrSpeed());
+                                            }
+
                                         }else{
                                             singleCar.setCurrSpeed(carElement.getCurrSpeed());
                                         }
@@ -319,12 +361,63 @@ public class GameController {
                             }
 
                         }
+
+
+                        // checking for way nearby
+
+                            for(RoadWay roadWay:roadWays){
+                                if(carElement.getDirection() == 1){// to left
+                                    if(roadWay.get().getTranslateX() - carElement.getPosition() < 100 && roadWay.get().getTranslateX() - carElement.getPosition() > -100){
+                                        carElement.setNearWay(true);
+                                    }else{
+                                        carElement.setNearWay(false);
+                                    }
+                                }else{
+                                    if(carElement.getPosition() - roadWay.get().getTranslateX() < 100 && carElement.getPosition() - roadWay.get().getTranslateX() > -100){
+                                        carElement.setNearWay(true);
+                                    }else{
+                                        carElement.setNearWay(false);
+                                    }
+                                }
+                            }
+
+
                     }
 
                 });
             }
         }, 100, 100);
 
+    }
+
+    public void removeCar(Car car){
+        for(Road roadElement:roadsElements){
+            if(roadElement.getRowIndex() < roads+1){
+                if(roadElement.getRowIndex() == car.getRoadNumber()){
+                    roadElement.get().getChildren().remove(car.get());
+                }
+            }else{
+                if(roadElement.getRowIndex() - 1 == car.getRoadNumber()){
+                    roadElement.get().getChildren().remove(car.get());
+                }
+            }
+        }
+    }
+
+    public void addCarToRow(Car car, int roadNumber, int tranlsateX){
+        for(Road roadElement:roadsElements){
+            if(roadElement.getRowIndex() < roads+1){
+                if(roadElement.getRowIndex() == roadNumber){
+                    roadElement.get().getChildren().add(car.get());
+                    car.get().setTranslateX(tranlsateX);
+                }
+            }else{
+                if(roadElement.getRowIndex() - 1 == roadNumber){
+                    roadElement.get().getChildren().add(car.get());
+                    car.get().setTranslateX(tranlsateX);
+                }
+            }
+        }
     }
 
 }

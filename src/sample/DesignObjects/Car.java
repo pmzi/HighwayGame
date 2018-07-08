@@ -13,6 +13,8 @@ public class Car extends DesignObject {
     private int currSpeed = 0;
     private int roadNumber = 0;
 
+    private boolean nearWay = false;
+
     int direction = 1;
 
     private Label car = new Label();
@@ -47,6 +49,8 @@ public class Car extends DesignObject {
         this.currSpeed = randomNum;
         this.roadNumber = roadNumber;
 
+        this.car.toFront();
+
     }
 
     public int getRoadNumber(){
@@ -62,22 +66,26 @@ public class Car extends DesignObject {
     }
 
     public void move(){
+
+        if(this.nearWay){
+            this.currSpeed /= 2;
+        }
+
         if(direction == 1){
             this.car.setTranslateX(this.car.getTranslateX() - (this.currSpeed/10));
         }else{
             this.car.setTranslateX(this.car.getTranslateX() + (this.currSpeed/10));
         }
 
-    }
-
-    public void stop(){
+        this.currSpeed = this.primarySpeed;
 
     }
 
-    public void lessenSpeed(){}
+    public void setNearWay(boolean nearWay){
+        this.nearWay = nearWay;
+    }
 
-    public void goUp(int roadHeight){
-        this.car.setTranslateY(this.car.getTranslateY() - roadHeight);
+    public void goUp(){
         this.roadNumber--;
     }
 
