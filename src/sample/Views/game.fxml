@@ -62,7 +62,7 @@
 
         </Label>
         <Label fx:id="scoreText" styleClass="iconicLabelValue">
-            100000
+            00000
             <HBox.margin>
                 <Insets>
                     <right>10</right>
@@ -73,7 +73,7 @@
         <Label fx:id="timeIcon" styleClass="iconicLabel">
 
         </Label>
-        <Label styleClass="iconicLabelValue">
+        <Label fx:id="timePassedText" styleClass="iconicLabelValue">
             00:00
             <HBox.margin>
                 <Insets>

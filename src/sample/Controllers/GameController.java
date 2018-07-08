@@ -47,7 +47,7 @@ public class GameController {
 
     private Timer gameControllerTimer;
     private Timer carGeneratorTimer;
-
+    private Timer timePassTimer;
 
     public void setRoadsElements(ArrayList<Road> roadsElements){
         this.roadsElements = roadsElements;
@@ -80,6 +80,8 @@ public class GameController {
     private GridPane wrapper;
     @FXML
     private Label scoreText;
+    @FXML
+    private Label timePassedText;
 
     @FXML
     public void showSave(){
@@ -206,16 +208,39 @@ public class GameController {
 
     }
 
-    public void setScore(int score){
+    private void setScore(int score){
         this.score += score;
         //
         scoreText.setText(Integer.toString(this.score));
+    }
+
+    private void changeTime(){
+        this.timePassed++;
+
+        String textOfTime = new String();
+
+        String seconds = Integer.toString(this.timePassed%60);
+
+        String minutes = Integer.toString(this.timePassed / 60);
+
+        if(minutes.length() == 1){
+            minutes = "0"+minutes;
+        }
+        if(seconds.length() == 1){
+            seconds = "0"+seconds;
+        }
+
+        textOfTime = minutes+":"+seconds;
+
+        timePassedText.setText(textOfTime);
     }
 
     public void sceneDidMount(){
         this.roadHeight = (int) this.roadsElements.get(0).get().getLayoutBounds().getHeight();
         this.roadAsideHeight = (int) this.roadAsideDown.get().getLayoutBounds().getHeight();
         this.roadMiddlewareHeight = (int) this.roadMiddleware.get().getLayoutBounds().getHeight();
+
+        this.initTimePassedTimer();
 
         this.initCarGenerator();
 
@@ -303,6 +328,18 @@ public class GameController {
             mainPage.show();
 
         }
+    }
+
+    private void initTimePassedTimer(){
+        this.timePassTimer = new Timer();
+        timePassTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+                    changeTime();
+                });
+            }
+        }, 1000, 1000);
     }
 
     private void initCarGenerator(){
@@ -521,6 +558,7 @@ public class GameController {
 
         this.gameControllerTimer.cancel();
         this.carGeneratorTimer.cancel();
+        this.timePassTimer.cancel();
 
         for(Car carElement:carElements){
             carElement.stop();
