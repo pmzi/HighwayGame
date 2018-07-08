@@ -10,6 +10,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 import sample.DesignObjects.*;
+import sample.Helpers.MusicPlayer;
 import sample.Models.RankingModel;
 import sample.PageBuilder.FinishModal;
 import sample.PageBuilder.LostModal;
@@ -47,6 +48,9 @@ public class GameController {
 
     private boolean isPaused = false;
     private boolean isHighSpeed = false;
+
+    private MusicPlayer musicPlayer = new MusicPlayer("1.mp3");
+    private boolean isMusicPaused = false;
 
     private Timer gameControllerTimer;
     private Timer carGeneratorTimer;
@@ -89,6 +93,8 @@ public class GameController {
     private Button pauseIcon;
     @FXML
     private Button speedIcon;
+    @FXML
+    private Button musicIcon;
 
     @FXML
     public void showSave(){
@@ -228,6 +234,25 @@ public class GameController {
         pauseIcon.getStyleClass().add("gameIconicButtons");
     }
 
+    public void changeMusicStatus(){
+
+        musicIcon.getStyleClass().clear();
+
+        if(this.isMusicPaused){
+            // Let's play
+            this.musicPlayer.play();
+
+            musicIcon.getStyleClass().add("play");
+
+        }else{
+            this.musicPlayer.pause();
+            musicIcon.getStyleClass().add("paused");
+        }
+        musicIcon.getStyleClass().add("gameIconicButtons");
+        this.isMusicPaused = !this.isMusicPaused;
+
+    }
+
     public void changeSpeed(){
 
         this.isHighSpeed = !this.isHighSpeed;
@@ -283,6 +308,8 @@ public class GameController {
         this.initCarGenerator();
 
         this.initCarController();
+
+        this.musicPlayer.play();
 
     }
 

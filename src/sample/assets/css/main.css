@@ -291,8 +291,11 @@ For the game page
     -fx-background-image: url("../images/icons/save.png");
 }
 
-#musicIcon{
+.play{
     -fx-background-image: url("../images/icons/speaker.png");
+}
+.paused{
+    -fx-background-image: url("../images/icons/mute.png");
 }
 .pauseIcon{
     -fx-background-image: url("../images/icons/pause-sign.png");
