@@ -335,9 +335,16 @@ For the game page
     -fx-translate-x: -64px;
 }
 
-.simpleCar{
+/* Cars */
+
+.simpleRightCar{
     -fx-background-image: url("../images/cars/right/car.png");
 }
+
+.simpleLeftCar{
+    -fx-background-image: url("../images/cars/left/car.png");
+}
+
 
 .titleLabel{
     -fx-font-size: 24px;

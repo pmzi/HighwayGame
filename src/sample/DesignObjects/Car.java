@@ -42,9 +42,9 @@ public class Car extends DesignObject {
         this.direction = direction;
 
         if(direction == 1){
-            this.car.getStyleClass().addAll("car","simpleCar","rightCar");
+            this.car.getStyleClass().addAll("car","simpleLeftCar","rightCar");
         }else{
-            this.car.getStyleClass().addAll("car","simpleCar","leftCar");
+            this.car.getStyleClass().addAll("car","simpleRightCar","leftCar");
         }
 
         int randomNum = RandomNumberGenerator.randomNumberInRange(speedStart,speedEnd);
