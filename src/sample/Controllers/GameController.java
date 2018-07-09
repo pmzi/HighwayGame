@@ -8,11 +8,11 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
-import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import sample.DesignObjects.*;
 import sample.Helpers.MusicPlayer;
+import sample.Helpers.WindowHelper;
 import sample.Models.RankingModel;
 import sample.Models.ReplyModel;
 import sample.Models.SaveModel;
@@ -143,8 +143,7 @@ public class GameController {
 
         SaveModel.save(this, controller.saveTextField.getText());
 
-        Stage stage = (Stage) wrapper.getScene().getWindow();
-        stage.close();
+        WindowHelper.hideCurrent(wrapper);
 
         MainPage mainPage = new MainPage();
         mainPage.show();
@@ -162,7 +161,8 @@ public class GameController {
         Optional<ButtonType> result = alert.showAndWait();
 
         if (result.get() == ButtonType.OK) {
-            Platform.exit();
+            stopAll();
+            WindowHelper.hideCurrent(wrapper, true);
         }
 
     }
@@ -709,11 +709,7 @@ public class GameController {
                 ReplyModel.save(this, finisherController.saveText.getText());
             }
 
-            Stage stage = (Stage) wrapper.getScene().getWindow();
-            stage.close();
-
-            MainPage mainPage = new MainPage();
-            mainPage.show();
+            WindowHelper.hideCurrent(wrapper);
 
 
         }
@@ -1001,8 +997,7 @@ public class GameController {
         LostModal lostModal = new LostModal();
         lostModal.show();
 
-        Stage stage = (Stage) wrapper.getScene().getWindow();
-        stage.close();
+        WindowHelper.hideCurrent(wrapper, false);
 
     }
 

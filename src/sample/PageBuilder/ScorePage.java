@@ -1,11 +1,14 @@
 package sample.PageBuilder;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import sample.Controllers.ScoreController;
+import sample.Helpers.WindowHelper;
 
 import java.io.IOException;
 
@@ -25,6 +28,14 @@ public class ScorePage {
             Stage stage = new Stage();
             stage.setTitle("Load a game");
             scene.getStylesheets().add("sample/assets/css/main.css");
+            stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+
+                @Override
+                public void handle(WindowEvent windowEvent) {
+                    WindowHelper.hideCurrent(stage);
+                }
+            });
+
             stage.getIcons().add(new Image("sample/assets/images/icon.png"));
             stage.setScene(scene);
             stage.show();
