@@ -131,7 +131,7 @@ public class SettingsController {
                 if(roadBridges.get(i).isSelected()){
                     wrapper.getChildren().remove(roadBridges.get(i).get());
                     roadBridges.remove(i);
-
+                    bridges--;
                     deleted = true;
                 }
             }
@@ -140,7 +140,7 @@ public class SettingsController {
                 if(roadWays.get(i).isSelected()){
                     wrapper.getChildren().remove(roadWays.get(i).get());
                     roadWays.remove(i);
-
+                    ways--;
                     deleted = true;
                 }
             }
