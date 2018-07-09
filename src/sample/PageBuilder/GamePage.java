@@ -181,7 +181,7 @@ public class GamePage {
 
             System.out.println(roadObject);
 
-            Road tempRoad = new Road((int) (long) roadObject.get("row"));
+            Road tempRoad = new Road((int) (long) roadObject.get("row"), false);
             tempRoad.setRandomize((int) (long) roadObject.get("randomize"));
             tempRoad.setSpeedStart((int) (long) roadObject.get("speedStart"));
             tempRoad.setSpeedEnd((int) (long) roadObject.get("speedEnd"));
@@ -274,7 +274,7 @@ public class GamePage {
 
             System.out.println(roadObject);
 
-            Road tempRoad = new Road((int) (long) roadObject.get("row"));
+            Road tempRoad = new Road((int) (long) roadObject.get("row"), false);
             tempRoad.setRandomize((int) (long) roadObject.get("randomize"));
             tempRoad.setSpeedStart((int) (long) roadObject.get("speedStart"));
             tempRoad.setSpeedEnd((int) (long) roadObject.get("speedEnd"));
@@ -411,7 +411,7 @@ public class GamePage {
 
             System.out.println(roadObject);
 
-            Road tempRoad = new Road((int) (long) roadObject.get("row"));
+            Road tempRoad = new Road((int) (long) roadObject.get("row"), false);
             tempRoad.setRandomize((int) (long) roadObject.get("randomize"));
             tempRoad.setSpeedStart((int) (long) roadObject.get("speedStart"));
             tempRoad.setSpeedEnd((int) (long) roadObject.get("speedEnd"));

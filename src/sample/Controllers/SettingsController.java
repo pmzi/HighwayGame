@@ -59,8 +59,8 @@ public class SettingsController {
 
         // Let's create 2 new roads
 
-        Road road1 = new Road(this.maxRoads - this.roads);
-        Road road2 = new Road(this.maxRoads + this.roads);
+        Road road1 = new Road(this.maxRoads - this.roads, true);
+        Road road2 = new Road(this.maxRoads + this.roads, true);
 
         this.roadsElements.add(road1);
         this.roadsElements.add(road2);

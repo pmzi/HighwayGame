@@ -16,10 +16,12 @@ public class Road extends DesignObject{
     private int speedStart=10;
     private int speedEnd=20;
 
-    public Road(int rowPosition){
+    public Road(int rowPosition, boolean shouldHaveEvents){
 
         this.create(rowPosition);
-        this.initEvents();
+        if(shouldHaveEvents){
+            this.initEvents();
+        }
 
     }
 

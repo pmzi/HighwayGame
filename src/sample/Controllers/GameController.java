@@ -985,6 +985,10 @@ public class GameController {
             this.carGeneratorTimer.cancel();
         }
 
+        if(autoPilot){
+            this.autoPilotTimer.cancel();
+        }
+
         this.timePassTimer.cancel();
 
         for (Car carElement : carElements) {
