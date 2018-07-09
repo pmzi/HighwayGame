@@ -22,6 +22,7 @@ import sample.PageBuilder.MainPage;
 import sample.PageBuilder.SaveModal;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 
 public class GameController {
@@ -55,6 +56,7 @@ public class GameController {
     private int roadHeight = 0;
 
     private boolean replyMode = false;
+    private boolean autoPilot = false;
 
     private boolean isPaused = false;
     private boolean isHighSpeed = false;
@@ -67,6 +69,7 @@ public class GameController {
     private Timer timePassTimer;
     private Timer gameReplyTimer;
     private Timer gameReplyTimeCreatorTimer;
+    private Timer autoPilotTimer;
 
     public void setRoadsElements(ArrayList<Road> roadsElements) {
         this.roadsElements = roadsElements;
@@ -161,6 +164,60 @@ public class GameController {
         if (result.get() == ButtonType.OK) {
             Platform.exit();
         }
+
+    }
+
+    @FXML
+    public void turnOnAutoPilot() {
+
+        this.autoPilot = true;
+
+
+        this.switchPersons(0);
+
+        autoPilotTimer = new Timer();
+        autoPilotTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+
+                    int remainingToTop = (roads * 2) - personElements.get(selectedPerson).getPersonYPosition() + 1;
+                    if (remainingToTop == 0) {
+                        if(persons>selectedPerson+1){
+                            switchPersons(selectedPerson+1);
+                        }else{
+                            autoPilotTimer.cancel();
+                            autoPilot = false;
+                            personDidMove();
+                            return;
+                        }
+                    } else {
+                        int randomNum = ThreadLocalRandom.current().nextInt(1, 5);
+
+                        if(remainingToTop == 0 && randomNum == 2){
+                            randomNum = 1;
+                        }
+
+                        switch (randomNum) {
+                            case 1:
+                                goUp();
+                                break;
+                            case 2:
+                                goDown();
+                                break;
+                            case 3:
+                                goRight();
+                                break;
+                            case 4:
+                                goLeft();
+                                break;
+                        }
+                    }
+
+                });
+            }
+        }, 0, 200);
+
 
     }
 
@@ -459,6 +516,10 @@ public class GameController {
             moves.add(move);
         }
 
+        if(this.personElements.get(this.selectedPerson).getPersonYPosition() == this.roads*2 + 1){
+            return;
+        }
+
         if (this.personElements.get(this.selectedPerson).getPersonYPosition() == 0) {
             this.personElements.get(this.selectedPerson).changePosition(-1, (int) -1 * ((roadHeight / 2) + (this.roadAsideHeight / 2)));
         } else if (this.personElements.get(this.selectedPerson).getPersonYPosition() == this.roads) {
@@ -482,6 +543,10 @@ public class GameController {
             move.put("time", timePassed);
             JSONArray moves = (JSONArray) this.personsMoves.get(this.selectedPerson);
             moves.add(move);
+        }
+
+        if(this.personElements.get(this.selectedPerson).getPersonYPosition() == 0){
+            return;
         }
 
         if (this.personElements.get(this.selectedPerson).getPersonYPosition() == 1) {
@@ -508,6 +573,10 @@ public class GameController {
             moves.add(move);
         }
 
+        if(this.personElements.get(this.selectedPerson).get().getTranslateX() > 1550){
+            return;
+        }
+
 
         if (!onBridge(this.personElements.get(this.selectedPerson))) {
             this.personElements.get(this.selectedPerson).changePosition(10, -1);
@@ -517,6 +586,10 @@ public class GameController {
     public void goLeft() {
 
         if (isPaused) {
+            return;
+        }
+
+        if(this.personElements.get(this.selectedPerson).get().getTranslateX() < 100 ){
             return;
         }
 

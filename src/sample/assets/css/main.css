@@ -308,6 +308,10 @@ For the game page
     -fx-background-image: url("../images/icons/turn-off.png");
 }
 
+#autoPilotIcon{
+    -fx-background-image: url("../images/icons/autopilot.png");
+}
+
 .fast{
     -fx-background-image: url("../images/icons/2x.png");
 }

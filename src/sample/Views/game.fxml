@@ -50,6 +50,13 @@
                 </Insets>
             </HBox.margin>
         </Button>
+        <Button onAction="#turnOnAutoPilot" fx:id="autoPilotIcon" styleClass="gameIconicButtons">
+            <HBox.margin>
+                <Insets>
+                    <right>10</right>
+                </Insets>
+            </HBox.margin>
+        </Button>
         <Button onAction="#showSave" fx:id="saveIcon" styleClass="gameIconicButtons">
             <HBox.margin>
                 <Insets>
