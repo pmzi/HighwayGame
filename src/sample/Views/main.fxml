@@ -85,7 +85,7 @@
         </Button>
 
         <Label styleClass="buttonLabel" GridPane.halignment="center" GridPane.valignment="BOTTOM" text="About" GridPane.rowIndex="0" GridPane.columnIndex="1" />
-        <Button GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="1">
+        <Button onAction="#openDoc" GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="1">
             <graphic>
                 <ImageView>
                     <Image url="@../assets/images/icons/web.png"/>
@@ -94,7 +94,7 @@
         </Button>
 
         <Label styleClass="buttonLabel" GridPane.halignment="center" GridPane.valignment="BOTTOM" text="Github" GridPane.rowIndex="0" GridPane.columnIndex="2" />
-        <Button GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="2">
+        <Button onAction="#openGithub" GridPane.valignment="TOP" GridPane.halignment="center" styleClass="iconButton" GridPane.rowIndex="1" GridPane.columnIndex="2">
             <graphic>
                 <ImageView>
                     <Image url="@../assets/images/icons/github.png"/>
@@ -122,7 +122,7 @@
 
         </Button>
 
-        <Button GridPane.valignment="CENTER" GridPane.halignment="RIGHT" styleClass="iconicLabelLessButton" fx:id="exitIcon" GridPane.rowIndex="0" GridPane.columnIndex="1">
+        <Button onAction="#exit" GridPane.valignment="CENTER" GridPane.halignment="RIGHT" styleClass="iconicLabelLessButton" fx:id="exitIcon" GridPane.rowIndex="0" GridPane.columnIndex="1">
 
         </Button>
 
