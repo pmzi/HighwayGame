@@ -378,5 +378,84 @@
         }
       ]
     }
+  },
+  {
+    "persons": {
+      "length": 1,
+      "items": [
+        {
+          "yPosition": 0,
+          "x": 0.0,
+          "y": 0.0
+        }
+      ]
+    },
+    "cars": {
+      "length": 2,
+      "items": [
+        {
+          "creationTime": 0,
+          "x": 1342,
+          "y": 1,
+          "speed": 36,
+          "direction": 1
+        },
+        {
+          "creationTime": 1,
+          "x": 1452,
+          "y": 2,
+          "speed": 45,
+          "direction": 1
+        }
+      ]
+    },
+    "score": 0,
+    "ways": {
+      "length": 1,
+      "items": [
+        {
+          "x": 100.0
+        }
+      ]
+    },
+    "timePassed": 9,
+    "name": "6",
+    "roads": {
+      "length": 4,
+      "items": [
+        {
+          "row": 2,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 4,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 1,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 5,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        }
+      ]
+    },
+    "bridges": {
+      "length": 1,
+      "items": [
+        {
+          "x": 200.0
+        }
+      ]
+    }
   }
 ]

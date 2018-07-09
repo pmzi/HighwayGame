@@ -15,6 +15,8 @@ public class Car extends DesignObject {
 
     private int initiationX = 0;
 
+    private int creationTime;
+
     private boolean isHighSpeed = false;
     private boolean nearWay = false;
 
@@ -22,8 +24,8 @@ public class Car extends DesignObject {
 
     private Label car = new Label();
 
-    public Car(int speedStart, int speedEnd, int roadNumber, int direction){
-        this.create(speedStart,speedEnd,roadNumber,direction);
+    public Car(int speedStart, int speedEnd, int roadNumber, int direction, int creationTime){
+        this.create(speedStart,speedEnd,roadNumber,direction,creationTime);
     }
 
     /*
@@ -36,8 +38,8 @@ public class Car extends DesignObject {
             <!--</Label>
      */
 
-    public void create(int speedStart, int speedEnd, int roadNumber, int direction) {
-
+    public void create(int speedStart, int speedEnd, int roadNumber, int direction,int creationTime) {
+        this.creationTime = creationTime;
         this.direction = direction;
 
         if(direction == 1){
@@ -54,6 +56,10 @@ public class Car extends DesignObject {
 
         this.car.toFront();
 
+    }
+
+    public int getCreationTime(){
+        return this.creationTime;
     }
 
     public int getRoadNumber(){

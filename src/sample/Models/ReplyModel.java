@@ -15,9 +15,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /**
- * Created by pmzi on 7/8/2018.
+ * Created by pmzi on 7/9/2018.
  */
-public class SaveModel {
+public class ReplyModel {
 
     public static void save(GameController input, String name){
 
@@ -33,8 +33,8 @@ public class SaveModel {
         for(Person person:input.getPersons()){
             JSONObject tempPerson = new JSONObject();
             tempPerson.put("x", person.get().getTranslateX());
-            tempPerson.put("yPosition", person.getPersonYPosition());
-            tempPerson.put("y", person.get().getTranslateY());
+            tempPerson.put("yPosition", 0);
+            tempPerson.put("y", 0.0);
             personItems.add(tempPerson);
         }
         persons.put("items", personItems);
@@ -87,7 +87,7 @@ public class SaveModel {
         ArrayList<JSONObject> carItems = new ArrayList<>();
         for(Car car:input.getCars()){
             JSONObject tempCar = new JSONObject();
-            tempCar.put("x", car.getPosition());
+            tempCar.put("x", 0.0);
             tempCar.put("y", car.getRoadNumber());
             tempCar.put("direction", car.getDirection());
             tempCar.put("speed", car.getPrimarySpeed());
@@ -102,9 +102,11 @@ public class SaveModel {
 
         primaryObj.put("timePassed", input.getTimePassed());
 
+        primaryObj.put("personMovements", input.getPersonMovements());
+
         savedData.add(primaryObj);
 
-        Path path = Paths.get("src/sample/DB/saves.json", new String[0]);
+        Path path = Paths.get("src/sample/DB/replies.json", new String[0]);
         String newPath = path.toAbsolutePath().toString();
 
         try(FileWriter file = new FileWriter(newPath);) {
@@ -119,7 +121,8 @@ public class SaveModel {
     }
 
     public static JSONArray readAll(){
-        Path path = Paths.get("src/sample/DB/saves.json", new String[0]);
+
+        Path path = Paths.get("src/sample/DB/replies.json", new String[0]);
         String newPath = path.toAbsolutePath().toString();
 
         JSONParser parser = new JSONParser();
@@ -136,10 +139,11 @@ public class SaveModel {
         }catch (Exception e){
             return null;
         }
+
     }
 
     public static JSONObject getSpecific(String name){
-        Path path = Paths.get("src/sample/DB/saves.json", new String[0]);
+        Path path = Paths.get("src/sample/DB/replies.json", new String[0]);
         String newPath = path.toAbsolutePath().toString();
 
         JSONParser parser = new JSONParser();
@@ -171,7 +175,7 @@ public class SaveModel {
     private int score;
     private int timePassed;
 
-    public SaveModel(String name, int score, int timePassed){
+    public ReplyModel(String name, int score, int timePassed){
         this.name = name;
         this.score = score;
         this.timePassed = timePassed;

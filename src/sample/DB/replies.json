@@ -1,0 +1,546 @@
+[
+  {
+    "persons": {
+      "length": 2,
+      "items": [
+        {
+          "yPosition": 0,
+          "x": 120.0,
+          "y": 0.0
+        },
+        {
+          "yPosition": 0,
+          "x": 360.0,
+          "y": 0.0
+        }
+      ]
+    },
+    "cars": {
+      "length": 2,
+      "items": [
+        {
+          "creationTime": 0,
+          "x": 0.0,
+          "y": 3,
+          "speed": 45,
+          "direction": 0
+        },
+        {
+          "creationTime": 1,
+          "x": 0.0,
+          "y": 3,
+          "speed": 37,
+          "direction": 0
+        }
+      ]
+    },
+    "score": 755,
+    "personMovements": [
+      [
+        {
+          "time": 6,
+          "type": 1
+        },
+        {
+          "time": 6,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 1
+        },
+        {
+          "time": 8,
+          "type": 1
+        },
+        {
+          "time": 8,
+          "type": 1
+        },
+        {
+          "time": 9,
+          "type": 1
+        }
+      ],
+      [
+        {
+          "time": 2,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 1
+        },
+        {
+          "time": 4,
+          "type": 1
+        },
+        {
+          "time": 4,
+          "type": 1
+        },
+        {
+          "time": 4,
+          "type": 1
+        },
+        {
+          "time": 5,
+          "type": 1
+        }
+      ]
+    ],
+    "ways": {
+      "length": 0,
+      "items": []
+    },
+    "timePassed": 9,
+    "name": "salam",
+    "roads": {
+      "length": 4,
+      "items": [
+        {
+          "row": 2,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 4,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 1,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 5,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        }
+      ]
+    },
+    "bridges": {
+      "length": 1,
+      "items": [
+        {
+          "x": 200.0
+        }
+      ]
+    }
+  },
+  {
+    "persons": {
+      "length": 2,
+      "items": [
+        {
+          "yPosition": 0,
+          "x": 60.0,
+          "y": 0.0
+        },
+        {
+          "yPosition": 0,
+          "x": 270.0,
+          "y": 0.0
+        }
+      ]
+    },
+    "cars": {
+      "length": 2,
+      "items": [
+        {
+          "creationTime": 0,
+          "x": 0.0,
+          "y": 1,
+          "speed": 42,
+          "direction": 1
+        },
+        {
+          "creationTime": 1,
+          "x": 0.0,
+          "y": 1,
+          "speed": 32,
+          "direction": 1
+        }
+      ]
+    },
+    "score": 755,
+    "personMovements": [
+      [
+        {
+          "time": 5,
+          "type": 1
+        },
+        {
+          "time": 6,
+          "type": 1
+        },
+        {
+          "time": 6,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 1
+        },
+        {
+          "time": 7,
+          "type": 3
+        },
+        {
+          "time": 7,
+          "type": 3
+        },
+        {
+          "time": 8,
+          "type": 1
+        },
+        {
+          "time": 8,
+          "type": 3
+        },
+        {
+          "time": 8,
+          "type": 3
+        },
+        {
+          "time": 9,
+          "type": 1
+        }
+      ],
+      [
+        {
+          "time": 2,
+          "type": 3
+        },
+        {
+          "time": 2,
+          "type": 3
+        },
+        {
+          "time": 2,
+          "type": 3
+        },
+        {
+          "time": 2,
+          "type": 3
+        },
+        {
+          "time": 2,
+          "type": 3
+        },
+        {
+          "time": 2,
+          "type": 3
+        },
+        {
+          "time": 2,
+          "type": 3
+        },
+        {
+          "time": 2,
+          "type": 3
+        },
+        {
+          "time": 2,
+          "type": 3
+        },
+        {
+          "time": 2,
+          "type": 3
+        },
+        {
+          "time": 2,
+          "type": 3
+        },
+        {
+          "time": 2,
+          "type": 3
+        },
+        {
+          "time": 2,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 3,
+          "type": 3
+        },
+        {
+          "time": 4,
+          "type": 3
+        },
+        {
+          "time": 4,
+          "type": 1
+        },
+        {
+          "time": 4,
+          "type": 1
+        },
+        {
+          "time": 4,
+          "type": 1
+        },
+        {
+          "time": 4,
+          "type": 1
+        },
+        {
+          "time": 5,
+          "type": 1
+        }
+      ]
+    ],
+    "ways": {
+      "length": 0,
+      "items": []
+    },
+    "timePassed": 9,
+    "name": "22",
+    "roads": {
+      "length": 4,
+      "items": [
+        {
+          "row": 2,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 4,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 1,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 5,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        }
+      ]
+    },
+    "bridges": {
+      "length": 1,
+      "items": [
+        {
+          "x": 200.0
+        }
+      ]
+    }
+  }
+]
