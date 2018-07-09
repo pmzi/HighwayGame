@@ -245,7 +245,7 @@ public class GamePage {
             JSONObject carObject = (JSONObject) c.next();
 
             Car tempCar = new Car(10,50,(int)(long)carObject.get("y"),(int)(long)carObject.get("direction"),(int)(long)carObject.get("creationTime"));
-            tempCar.setCurrSpeed((int)(long)carObject.get("speed"));
+            tempCar.setPrimarySpeed((int)(long)carObject.get("speed"));
             tempCar.setInitiationX((int)(long)carObject.get("x"));
             carElements.add(tempCar);
 
@@ -475,7 +475,7 @@ public class GamePage {
             JSONObject carObject = (JSONObject) c.next();
 
             Car tempCar = new Car(10,50,(int)(long)carObject.get("y"),(int)(long)carObject.get("direction"),(int)(long)carObject.get("creationTime"));
-            tempCar.setCurrSpeed((int)(long)carObject.get("speed"));
+            tempCar.setPrimarySpeed((int)(long)carObject.get("speed"));
             tempCar.setInitiationX((int)(double)carObject.get("x"));
             carElements.add(tempCar);
 

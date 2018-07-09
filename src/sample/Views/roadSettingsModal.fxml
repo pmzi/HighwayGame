@@ -35,13 +35,13 @@
         <Label>
             Speed start:
         </Label>
-        <Slider fx:id="speedStart" showTickLabels="true" showTickMarks="true" min="30" max="100" />
+        <Slider fx:id="speedStart" showTickLabels="true" showTickMarks="true" min="80" max="140" />
     </HBox>
     <HBox spacing="10" GridPane.rowIndex="3" GridPane.columnIndex="0" alignment="CENTER">
         <Label>
             Speed end:
         </Label>
-        <Slider fx:id="speedEnd" showTickLabels="true" showTickMarks="true" min="30" max="100" />
+        <Slider fx:id="speedEnd" showTickLabels="true" showTickMarks="true" min="80" max="140" />
     </HBox>
 
     <HBox alignment="CENTER" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="4">

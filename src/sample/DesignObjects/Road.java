@@ -13,8 +13,8 @@ public class Road extends DesignObject{
 
     private GridPane road = new GridPane();
     private int randomize=1;
-    private int speedStart=10;
-    private int speedEnd=20;
+    private int speedStart=80;
+    private int speedEnd=140;
 
     public Road(int rowPosition, boolean shouldHaveEvents){
 

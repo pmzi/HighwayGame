@@ -18,7 +18,6 @@ import sample.Models.ReplyModel;
 import sample.Models.SaveModel;
 import sample.PageBuilder.FinishModal;
 import sample.PageBuilder.LostModal;
-import sample.PageBuilder.MainPage;
 import sample.PageBuilder.SaveModal;
 
 import java.util.*;
@@ -142,11 +141,8 @@ public class GameController {
         }
 
         SaveModel.save(this, controller.saveTextField.getText());
-
-        WindowHelper.hideCurrent(wrapper);
-
-        MainPage mainPage = new MainPage();
-        mainPage.show();
+        stopAll();
+        WindowHelper.hideCurrent(wrapper,true);
 
     }
 
@@ -676,7 +672,7 @@ public class GameController {
 
                 });
             }
-        }, 0, 5000);
+        }, 0, 3);
 
     }
 
@@ -741,14 +737,16 @@ public class GameController {
                         return;
                     }
 
+
                     int roadNumber = new Random().nextInt(roads * 2) + 1;
+
                     int direction = 0;
                     if (roadNumber < roads + 1) {
                         direction = 1;
                     }
 
-                    int speedStart = 10;
-                    int speedEnd = 50;
+                    int speedStart = 80;
+                    int speedEnd = 140;
 
                     for (Road roadElement : roadsElements) {
                         if (roadElement.getRowIndex() < roads + 1) {
@@ -765,8 +763,8 @@ public class GameController {
                     }
 
                     if(speedStart >= speedEnd){
-                        speedStart = 30;
-                        speedEnd = 50;
+                        speedStart = 80;
+                        speedEnd = 140;
                     }
 
                     Car car = new Car(speedStart, speedEnd, roadNumber, direction, creationTime);
@@ -791,7 +789,7 @@ public class GameController {
 
                 });
             }
-        }, 100, 5000);
+        }, 100, 3000);
     }
 
     private void initCarController() {
@@ -940,7 +938,7 @@ public class GameController {
 
                 });
             }
-        }, 100, 100);
+        }, 100, 50);
 
     }
 

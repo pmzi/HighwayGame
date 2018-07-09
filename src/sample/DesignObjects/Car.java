@@ -48,8 +48,6 @@ public class Car extends DesignObject {
         }
 
         int randomNum = RandomNumberGenerator.randomNumberInRange(speedStart,speedEnd);
-        System.out.println(speedStart);
-        System.out.println(speedEnd);
         this.primarySpeed = randomNum;
         this.currSpeed = randomNum;
         this.roadNumber = roadNumber;
@@ -96,9 +94,9 @@ public class Car extends DesignObject {
         }
 
         if(direction == 1){
-            this.car.setTranslateX(prevX - (this.currSpeed/10));
+            this.car.setTranslateX(prevX - (this.currSpeed/20));
         }else{
-            this.car.setTranslateX(prevX + (this.currSpeed/10));
+            this.car.setTranslateX(prevX + (this.currSpeed/20));
         }
 
         this.currSpeed = this.primarySpeed;
@@ -128,6 +126,10 @@ public class Car extends DesignObject {
 
     public void setCurrSpeed(int speed){
         this.currSpeed = speed;
+    }
+
+    public void setPrimarySpeed(int speed){
+        this.primarySpeed = speed;
     }
 
     public int getCurrSpeed(){
