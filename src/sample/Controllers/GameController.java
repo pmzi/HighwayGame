@@ -589,7 +589,7 @@ public class GameController {
             return;
         }
 
-        if(this.personElements.get(this.selectedPerson).get().getTranslateX() < 100 ){
+        if(this.personElements.get(this.selectedPerson).get().getTranslateX() < 5 ){
             return;
         }
 
