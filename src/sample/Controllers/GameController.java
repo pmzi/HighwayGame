@@ -751,7 +751,30 @@ public class GameController {
                         direction = 1;
                     }
 
-                    Car car = new Car(30, 50, roadNumber, direction, creationTime);
+                    int speedStart = 10;
+                    int speedEnd = 50;
+
+                    for (Road roadElement : roadsElements) {
+                        if (roadElement.getRowIndex() < roads + 1) {
+                            if (roadElement.getRowIndex() == roadNumber) {
+                                speedStart = roadElement.getSpeedStart();
+                                speedEnd = roadElement.getSpeedEnd();
+                            }
+                        } else {
+                            if (roadElement.getRowIndex() - 1 == roadNumber) {
+                                speedStart = roadElement.getSpeedStart();
+                                speedEnd = roadElement.getSpeedEnd();
+                            }
+                        }
+                    }
+
+                    if(speedStart >= speedEnd){
+                        speedStart = 30;
+                        speedEnd = 50;
+                    }
+
+                    Car car = new Car(speedStart, speedEnd, roadNumber, direction, creationTime);
+                    System.out.println(car.getCurrSpeed());
                     car.setHighSpeed(isHighSpeed);
 
                     creationTime++;

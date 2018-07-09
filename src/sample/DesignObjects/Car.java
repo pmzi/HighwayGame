@@ -1,8 +1,7 @@
 package sample.DesignObjects;
 
 import javafx.scene.control.Label;
-
-import java.util.concurrent.ThreadLocalRandom;
+import sample.Helpers.RandomNumberGenerator;
 
 /**
  * Created by pmzi on 7/8/2018.
@@ -48,8 +47,9 @@ public class Car extends DesignObject {
             this.car.getStyleClass().addAll("car","simpleCar","leftCar");
         }
 
-        int randomNum = ThreadLocalRandom.current().nextInt(speedStart, speedEnd + 1);
-
+        int randomNum = RandomNumberGenerator.randomNumberInRange(speedStart,speedEnd);
+        System.out.println(speedStart);
+        System.out.println(speedEnd);
         this.primarySpeed = randomNum;
         this.currSpeed = randomNum;
         this.roadNumber = roadNumber;
