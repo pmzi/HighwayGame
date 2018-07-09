@@ -275,6 +275,25 @@ public class GameController {
 
         this.roadMiddleware = roadMiddleware;
 
+        // Let's append cars
+
+        for(Car carElement:carElements){
+
+
+
+            for(Road roadElement:roadsElements){
+                if(roadElement.getRowIndex() < roads+1){
+                    if(roadElement.getRowIndex() == carElement.getRoadNumber()){
+                        roadElement.get().getChildren().add(carElement.get());
+                    }
+                }else{
+                    if(roadElement.getRowIndex() - 1 == carElement.getRoadNumber()){
+                        roadElement.get().getChildren().add(carElement.get());
+                    }
+                }
+            }
+        }
+
         // We are good to go!
 
     }
@@ -695,12 +714,12 @@ public class GameController {
             if(roadElement.getRowIndex() < roads+1){
                 if(roadElement.getRowIndex() == roadNumber){
                     roadElement.get().getChildren().add(car.get());
-                    car.get().setTranslateX(tranlsateX);
+                    car.setInitiationX(tranlsateX);
                 }
             }else{
                 if(roadElement.getRowIndex() - 1 == roadNumber){
                     roadElement.get().getChildren().add(car.get());
-                    car.get().setTranslateX(tranlsateX);
+                    car.setInitiationX(tranlsateX);
                 }
             }
         }

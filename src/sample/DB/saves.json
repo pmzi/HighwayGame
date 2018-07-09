@@ -1,0 +1,382 @@
+[
+  {
+    "persons": {
+      "length": 2,
+      "items": [
+        {
+          "yPosition": 0,
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "yPosition": 0,
+          "x": 40.0,
+          "y": 0.0
+        }
+      ]
+    },
+    "cars": {
+      "items": [
+        {
+          "x": 1396,
+          "y": 2,
+          "speed": 43,
+          "direction": 1
+        },
+        {
+          "x": -56,
+          "y": 4,
+          "speed": 43,
+          "direction": 0
+        }
+      ]
+    },
+    "score": 0,
+    "ways": {
+      "length": 0,
+      "items": []
+    },
+    "timePassed": 6,
+    "name": "1",
+    "roads": {
+      "length": 2,
+      "items": [
+        {
+          "row": 2,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 4,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 1,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 5,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        }
+      ]
+    },
+    "bridges": {
+      "length": 1,
+      "items": [
+        {
+          "x": 200.0
+        }
+      ]
+    }
+  },
+  {
+    "persons": {
+      "length": 1,
+      "items": [
+        {
+          "yPosition": 0,
+          "x": 0.0,
+          "y": 0.0
+        }
+      ]
+    },
+    "cars": {
+      "items": [
+        {
+          "x": 1516,
+          "y": 1,
+          "speed": 33,
+          "direction": 1
+        }
+      ]
+    },
+    "score": 0,
+    "ways": {
+      "length": 1,
+      "items": [
+        {
+          "x": 100.0
+        }
+      ]
+    },
+    "timePassed": 3,
+    "name": "2",
+    "roads": {
+      "length": 1,
+      "items": [
+        {
+          "row": 2,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 4,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 1,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 5,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        }
+      ]
+    },
+    "bridges": {
+      "length": 1,
+      "items": [
+        {
+          "x": 200.0
+        }
+      ]
+    }
+  },
+  {
+    "persons": {
+      "length": 2,
+      "items": [
+        {
+          "yPosition": 0,
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "yPosition": 0,
+          "x": 40.0,
+          "y": 0.0
+        }
+      ]
+    },
+    "cars": {
+      "items": [
+        {
+          "x": 1468,
+          "y": 2,
+          "speed": 44,
+          "direction": 1
+        }
+      ]
+    },
+    "score": 0,
+    "ways": {
+      "length": 1,
+      "items": [
+        {
+          "x": 100.0
+        }
+      ]
+    },
+    "timePassed": 4,
+    "name": "3",
+    "roads": {
+      "length": 1,
+      "items": [
+        {
+          "row": 2,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 4,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 1,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 5,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        }
+      ]
+    },
+    "bridges": {
+      "length": 1,
+      "items": [
+        {
+          "x": 200.0
+        }
+      ]
+    }
+  },
+  {
+    "persons": {
+      "length": 2,
+      "items": [
+        {
+          "yPosition": 0,
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "yPosition": 0,
+          "x": 40.0,
+          "y": 0.0
+        }
+      ]
+    },
+    "cars": {
+      "length": 1,
+      "items": [
+        {
+          "x": 1492,
+          "y": 1,
+          "speed": 38,
+          "direction": 1
+        }
+      ]
+    },
+    "score": 0,
+    "ways": {
+      "length": 1,
+      "items": [
+        {
+          "x": 100.0
+        }
+      ]
+    },
+    "timePassed": 4,
+    "name": "4",
+    "roads": {
+      "length": 4,
+      "items": [
+        {
+          "row": 2,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 4,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 1,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 5,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        }
+      ]
+    },
+    "bridges": {
+      "length": 1,
+      "items": [
+        {
+          "x": 200.0
+        }
+      ]
+    }
+  },
+  {
+    "persons": {
+      "length": 2,
+      "items": [
+        {
+          "yPosition": 0,
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "yPosition": 1,
+          "x": 800.0,
+          "y": -62.0
+        }
+      ]
+    },
+    "cars": {
+      "length": 2,
+      "items": [
+        {
+          "x": 176,
+          "y": 4,
+          "speed": 49,
+          "direction": 0
+        },
+        {
+          "x": 46,
+          "y": 4,
+          "speed": 31,
+          "direction": 0
+        }
+      ]
+    },
+    "score": 0,
+    "ways": {
+      "length": 1,
+      "items": [
+        {
+          "x": 100.0
+        }
+      ]
+    },
+    "timePassed": 10,
+    "name": "5",
+    "roads": {
+      "length": 4,
+      "items": [
+        {
+          "row": 2,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 4,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 1,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        },
+        {
+          "row": 5,
+          "speedEnd": 20,
+          "randomize": 1,
+          "speedStart": 10
+        }
+      ]
+    },
+    "bridges": {
+      "length": 1,
+      "items": [
+        {
+          "x": 200.0
+        }
+      ]
+    }
+  }
+]

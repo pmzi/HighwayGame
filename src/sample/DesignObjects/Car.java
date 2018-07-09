@@ -13,6 +13,8 @@ public class Car extends DesignObject {
     private int currSpeed = 0;
     private int roadNumber = 0;
 
+    private int initiationX = 0;
+
     private boolean isHighSpeed = false;
     private boolean nearWay = false;
 
@@ -70,6 +72,10 @@ public class Car extends DesignObject {
         return  this.primarySpeed;
     }
 
+    public void setInitiationX(int x){
+        this.initiationX = x;
+    }
+
     public void move(){
 
         if(this.nearWay){
@@ -77,11 +83,16 @@ public class Car extends DesignObject {
         }else if(this.isHighSpeed){
             this.currSpeed *= 2;
         }
+        int prevX = (int) this.car.getTranslateX();
+        if(initiationX != 0){
+            prevX = initiationX;
+            initiationX = 0;
+        }
 
         if(direction == 1){
-            this.car.setTranslateX(this.car.getTranslateX() - (this.currSpeed/10));
+            this.car.setTranslateX(prevX - (this.currSpeed/10));
         }else{
-            this.car.setTranslateX(this.car.getTranslateX() + (this.currSpeed/10));
+            this.car.setTranslateX(prevX + (this.currSpeed/10));
         }
 
         this.currSpeed = this.primarySpeed;

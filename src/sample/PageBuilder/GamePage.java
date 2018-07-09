@@ -246,7 +246,7 @@ public class GamePage {
 
             Car tempCar = new Car(10,50,(int)(long)carObject.get("y"),(int)(long)carObject.get("direction"));
             tempCar.setCurrSpeed((int)(long)carObject.get("speed"));
-
+            tempCar.setInitiationX((int)(long)carObject.get("x"));
             carElements.add(tempCar);
 
         }
