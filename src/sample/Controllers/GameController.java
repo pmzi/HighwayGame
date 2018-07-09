@@ -520,7 +520,7 @@ public class GameController {
             return;
         }
 
-        if (this.personElements.get(this.selectedPerson).getPersonYPosition() == 0) {
+        if (this.personElements.get(this.selectedPerson).getPersonYPosition() == 0 || this.personElements.get(this.selectedPerson).getPersonYPosition() == this.roads*2) {
             this.personElements.get(this.selectedPerson).changePosition(-1, (int) -1 * ((roadHeight / 2) + (this.roadAsideHeight / 2)));
         } else if (this.personElements.get(this.selectedPerson).getPersonYPosition() == this.roads) {
             this.personElements.get(this.selectedPerson).changePosition(-1, (int) -1 * (roadHeight + this.roadMiddlewareHeight));
@@ -549,7 +549,7 @@ public class GameController {
             return;
         }
 
-        if (this.personElements.get(this.selectedPerson).getPersonYPosition() == 1) {
+        if (this.personElements.get(this.selectedPerson).getPersonYPosition() == 1 || this.personElements.get(this.selectedPerson).getPersonYPosition() == this.roads*2 +1) {
             this.personElements.get(this.selectedPerson).changePosition(-1, (int) +1 * ((roadHeight / 2) + (this.roadAsideHeight / 2)));
         } else if (this.personElements.get(this.selectedPerson).getPersonYPosition() == this.roads + 1) {
             this.personElements.get(this.selectedPerson).changePosition(-1, (int) +1 * (roadHeight + this.roadMiddlewareHeight));
