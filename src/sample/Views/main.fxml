@@ -118,7 +118,7 @@
             <Insets left="10" right="10" />
         </padding>
 
-        <Button GridPane.valignment="CENTER" GridPane.halignment="LEFT" styleClass="iconicLabelLessButton" fx:id="musicIcon" GridPane.rowIndex="0" GridPane.columnIndex="0">
+        <Button onAction="#changeMusicStatus" GridPane.valignment="CENTER" GridPane.halignment="LEFT" styleClass="iconicLabelLessButton,play" fx:id="musicIcon" GridPane.rowIndex="0" GridPane.columnIndex="0">
 
         </Button>
 

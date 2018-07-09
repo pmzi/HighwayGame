@@ -4,7 +4,9 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import sample.Helpers.MusicPlayer;
 import sample.Helpers.URLOpener;
 import sample.Helpers.WindowHelper;
 import sample.PageBuilder.LoadPage;
@@ -15,6 +17,13 @@ import sample.PageBuilder.SettingsPage;
 import java.util.Optional;
 
 public class Controller {
+
+    private boolean isMusicPaused = false;
+
+    private MusicPlayer musicPlayer = new MusicPlayer("1.mp3");
+
+    @FXML
+    private Button musicIcon;
 
     @FXML
     public void showLoadPage(ActionEvent e){
@@ -65,6 +74,24 @@ public class Controller {
     }
 
     @FXML
+    public void changeMusicStatus(){
+        musicIcon.getStyleClass().clear();
+
+        if (this.isMusicPaused) {
+            // Let's play
+            this.musicPlayer.play();
+
+            musicIcon.getStyleClass().add("play");
+
+        } else {
+            this.musicPlayer.pause();
+            musicIcon.getStyleClass().add("paused");
+        }
+        musicIcon.getStyleClass().add("gameIconicButtons");
+        this.isMusicPaused = !this.isMusicPaused;
+    }
+
+    @FXML
     public void exit() {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -78,6 +105,10 @@ public class Controller {
             Platform.exit();
         }
 
+    }
+
+    public void beforeMount(){
+        musicPlayer.play();
     }
 
 }

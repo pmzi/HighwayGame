@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import sample.Controllers.Controller;
 
 import java.io.IOException;
 
@@ -13,7 +14,12 @@ public class MainPage extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../Views/main.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("../Views/main.fxml"));
+        Parent root = (Parent) fxmlLoader.load();
+
+        Controller controller = fxmlLoader.getController();
+        controller.beforeMount();
 
         // load the tron font.
 //        Font.loadFont(
@@ -39,8 +45,10 @@ public class MainPage extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("../Views/main.fxml"));
         try{
-
-            Scene scene = new Scene(fxmlLoader.load(), 600, 520);
+            Parent root = (Parent) fxmlLoader.load();
+            Controller controller = fxmlLoader.getController();
+            controller.beforeMount();
+            Scene scene = new Scene(root, 600, 520);
             Stage stage = new Stage();
             stage.setTitle("Traffic Simulator");
             scene.getStylesheets().add("sample/assets/css/main.css");
