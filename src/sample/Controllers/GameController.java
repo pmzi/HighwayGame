@@ -929,7 +929,7 @@ public class GameController {
                                     }
                                 }
                             } else {
-                                if (carElement.getPosition() - person.get().getTranslateX() < 30 && carElement.getPosition() - person.get().getTranslateX() > -20) {
+                                if (carElement.getPosition() - person.get().getTranslateX() < 30 && carElement.getPosition() - person.get().getTranslateX() > -70) {
                                     if (!onBridge(person)) {
                                         stopAll();
                                         showFinisher();
