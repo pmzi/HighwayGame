@@ -1,9 +1,11 @@
 package sample.PageBuilder;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import sample.Controllers.ScoreController;
 
 import java.io.IOException;
 
@@ -16,11 +18,10 @@ public class ScorePage {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("../Views/scores.fxml"));
-            /*
-             * if "fx:controller" is not set in fxml
-             * fxmlLoader.setController(NewWindowController);
-             */
-            Scene scene = new Scene(fxmlLoader.load(), 600, 500);
+            Parent root = (Parent) fxmlLoader.load();
+            ScoreController controller = fxmlLoader.getController();
+            controller.insertData();
+            Scene scene = new Scene(root, 600, 500);
             Stage stage = new Stage();
             stage.setTitle("Load a game");
             scene.getStylesheets().add("sample/assets/css/main.css");

@@ -39,7 +39,7 @@ public class RankingModel {
 
     }
 
-    private static JSONArray read(){
+    public static JSONArray read(){
         Path path = Paths.get("src/sample/DB/ranking.json", new String[0]);
         String newPath = path.toAbsolutePath().toString();
 
@@ -57,6 +57,28 @@ public class RankingModel {
         }catch (Exception e){
             return null;
         }
+    }
+
+    private String name;
+    private int score;
+    private int timePassed;
+
+    public RankingModel(String name, int score, int timePassed){
+        this.name = name;
+        this.score = score;
+        this.timePassed = timePassed;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public int getScore(){
+        return this.score;
+    }
+
+    public int getTimePassed(){
+        return this.timePassed;
     }
 
 }
