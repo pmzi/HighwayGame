@@ -61,7 +61,7 @@ public class GameController {
     private boolean isPaused = false;
     private boolean isHighSpeed = false;
 
-    private MusicPlayer musicPlayer = new MusicPlayer("1.mp3");
+    private MusicPlayer musicPlayer = new MusicPlayer("2.mp3");
     private boolean isMusicPaused = false;
 
     private Timer gameControllerTimer;

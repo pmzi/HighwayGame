@@ -29,7 +29,7 @@ public class Controller {
     public void showLoadPage(ActionEvent e){
 
         WindowHelper.hideCurrent(e);
-
+        musicPlayer.stop();
         LoadPage loadPage = new LoadPage();
         loadPage.show();
 
@@ -39,7 +39,7 @@ public class Controller {
     public void showScoresPage(ActionEvent e){
 
         WindowHelper.hideCurrent(e);
-
+        musicPlayer.stop();
         ScorePage scorePage = new ScorePage();
         scorePage.show();
 
@@ -49,7 +49,7 @@ public class Controller {
     public void showReplyPage(ActionEvent e){
 
         WindowHelper.hideCurrent(e);
-
+        musicPlayer.stop();
         ReplyPage replyPage = new ReplyPage();
         replyPage.show();
 
@@ -58,7 +58,7 @@ public class Controller {
     @FXML
     public void showSettingsPage(ActionEvent e){
         WindowHelper.hideCurrent(e);
-
+        musicPlayer.stop();
         SettingsPage settingsPage = new SettingsPage();
         settingsPage.show();
     }
