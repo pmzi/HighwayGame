@@ -672,7 +672,7 @@ public class GameController {
 
                 });
             }
-        }, 0, 3);
+        }, 0, 3000);
 
     }
 
