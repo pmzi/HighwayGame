@@ -921,7 +921,7 @@ public class GameController {
                             // check for road bridge
 
                             if (carElement.getDirection() == 1) {// to left
-                                if (person.get().getTranslateX() - carElement.getPosition() < 10 && person.get().getTranslateX() - carElement.getPosition() > -10) {
+                                if (person.get().getTranslateX() - carElement.getPosition() < 70 && person.get().getTranslateX() - carElement.getPosition() > -20) {
                                     // check whether person is on bridge or not
                                     if (!onBridge(person)) {
                                         stopAll();
@@ -929,7 +929,7 @@ public class GameController {
                                     }
                                 }
                             } else {
-                                if (carElement.getPosition() - person.get().getTranslateX() < 10 && carElement.getPosition() - person.get().getTranslateX() > -10) {
+                                if (carElement.getPosition() - person.get().getTranslateX() < 30 && carElement.getPosition() - person.get().getTranslateX() > -20) {
                                     if (!onBridge(person)) {
                                         stopAll();
                                         showFinisher();
