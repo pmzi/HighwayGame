@@ -18,14 +18,14 @@ Game play:
 <img alt='Game page' style='display:block; margin:auto;' src='https://raw.githubusercontent.com/pmzi/HighwayGame/master/src/sample/assets/appImages/game.gif' />
 
 ## Installation guide
-First, make sure that JDK 8 or higher is installed on your PC, then clone this repository:
+First, make sure that JDK 8 or higher is installed on your machine, then clone this repository:
 ```
 $ git clone https://github.com/pmzi/HighwayGame.git
 ```
 This game needs JSON-simple library, so add it before compiling and running it.
 
 ## How to use
-You can run the app using any IDEs like IntelliJ or by creating an executive file using lunch4j.
+You can run the app using any IDE like IntelliJ or by creating an executable file using lunch4j.
 
 ## How to contribute
 If you have any suggestions or improvements, simply fork this repository and deploy your ideas and then make a pull request;)
