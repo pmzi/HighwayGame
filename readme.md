@@ -13,6 +13,10 @@ Game page:
 
 <img alt='Game page' style='display:block; margin:auto;' src='https://raw.githubusercontent.com/pmzi/HighwayGame/master/src/sample/assets/appImages/java3.PNG' />
 
+Game play:
+
+<img alt='Game page' style='display:block; margin:auto;' src='https://raw.githubusercontent.com/pmzi/HighwayGame/master/src/sample/assets/appImages/game.gif' />
+
 ## Installation guide
 First, make sure that JDK 8 or higher is installed on your PC, then clone this repository:
 ```
