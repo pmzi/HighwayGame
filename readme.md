@@ -28,7 +28,7 @@ This game needs JSON-simple library, so add it before compiling and running it.
 You can run the app using any IDEs like IntelliJ or by creating an executive file using lunch4j.
 
 ## How to contribute
-If you have any suggesstions or improvements, simply fork this repository and deploy your ideas and then make a pull request;)
+If you have any suggestions or improvements, simply fork this repository and deploy your ideas and then make a pull request;)
 
 ## License
 MIT
