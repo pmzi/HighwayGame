@@ -20,7 +20,7 @@ import java.util.Iterator;
 /**
  * Created by pmzi on 7/6/2018.
  */
-public class GamePage {
+public class GamePage extends BasePageBuilder {
 
     private ArrayList<Road> roadsElements = new ArrayList<>();
     private ArrayList<RoadWay> roadWays = new ArrayList<>();
@@ -34,12 +34,7 @@ public class GamePage {
     private int ways = 0;
     private int bridges = 0;
 
-    public static void show(){
-        GamePage gamePage = new GamePage();
-        gamePage.showPage();
-    }
-
-    private void showPage(){
+    public void show(){
 
         this.parse();
 

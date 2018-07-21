@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 /**
  * Created by pmzi on 7/7/2018.
  */
-public class Person extends DesignObject {
+public class Person extends DesignObject implements HMovable,VMovable {
 
     private Label person = new Label();
 
@@ -32,6 +32,22 @@ public class Person extends DesignObject {
     }
     public void setPersonYPosition(int personYPosition){
         this.personYPosition += personYPosition;
+    }
+
+    public void goUp(){
+        this.personYPosition += 1;
+    }
+
+    public void goLeft(){
+
+    }
+
+    public void goRight(){
+
+    }
+
+    public void goDown(){
+        this.personYPosition += -1;
     }
 
     private void create(){

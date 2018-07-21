@@ -4,6 +4,7 @@ import javafx.scene.layout.GridPane;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import sample.Controllers.BaseController;
 import sample.Controllers.GameController;
 import sample.DesignObjects.*;
 
@@ -17,20 +18,22 @@ import java.util.ArrayList;
 /**
  * Created by pmzi on 7/8/2018.
  */
-public class SaveModel {
+public class SaveModel implements Writable, Readable, FullReadable {
 
-    public static void save(GameController input, String name){
+    public static void save(BaseController input){
 
-        JSONArray savedData = readAll();
+        String name = ((GameController) input).getSavename();
+
+        JSONArray savedData = read();
 
         JSONObject primaryObj = new JSONObject();
 
         primaryObj.put("name",name);
 
         JSONObject persons = new JSONObject();
-        persons.put("length",input.getPersons().size());
+        persons.put("length",((GameController) input).getPersons().size());
         ArrayList<JSONObject> personItems = new ArrayList<>();
-        for(Person person:input.getPersons()){
+        for(Person person:((GameController) input).getPersons()){
             JSONObject tempPerson = new JSONObject();
             tempPerson.put("x", person.get().getTranslateX());
             tempPerson.put("yPosition", person.getPersonYPosition());
@@ -44,9 +47,9 @@ public class SaveModel {
         //
 
         JSONObject ways = new JSONObject();
-        ways.put("length",input.getRoadWays().size());
+        ways.put("length",((GameController) input).getRoadWays().size());
         ArrayList<JSONObject> wayItems = new ArrayList<>();
-        for(RoadWay roadWay:input.getRoadWays()){
+        for(RoadWay roadWay:((GameController) input).getRoadWays()){
             JSONObject tempWay = new JSONObject();
             tempWay.put("x", roadWay.get().getTranslateX());
             wayItems.add(tempWay);
@@ -56,9 +59,9 @@ public class SaveModel {
         primaryObj.put("ways", ways);
 
         JSONObject bridges = new JSONObject();
-        bridges.put("length",input.getRoadBridges().size());
+        bridges.put("length",((GameController) input).getRoadBridges().size());
         ArrayList<JSONObject> bridgeItems = new ArrayList<>();
-        for(RoadBridge roadBridge:input.getRoadBridges()){
+        for(RoadBridge roadBridge:((GameController) input).getRoadBridges()){
             JSONObject tempBridge = new JSONObject();
             tempBridge.put("x", roadBridge.get().getTranslateX());
             bridgeItems.add(tempBridge);
@@ -68,9 +71,9 @@ public class SaveModel {
         primaryObj.put("bridges", bridges);
 
         JSONObject roads = new JSONObject();
-        roads.put("length",input.getRoads().size());
+        roads.put("length",((GameController) input).getRoads().size());
         ArrayList<JSONObject> roadItems = new ArrayList<>();
-        for(Road road:input.getRoads()){
+        for(Road road:((GameController) input).getRoads()){
             JSONObject tempRoad = new JSONObject();
             tempRoad.put("row", GridPane.getRowIndex(road.get()));
             tempRoad.put("randomize", road.getRandomize());
@@ -83,9 +86,9 @@ public class SaveModel {
         primaryObj.put("roads", roads);
 
         JSONObject cars = new JSONObject();
-        cars.put("length",input.getCars().size());
+        cars.put("length",((GameController) input).getCars().size());
         ArrayList<JSONObject> carItems = new ArrayList<>();
-        for(Car car:input.getCars()){
+        for(Car car:((GameController) input).getCars()){
             JSONObject tempCar = new JSONObject();
             tempCar.put("x", car.getPosition());
             tempCar.put("y", car.getRoadNumber());
@@ -98,9 +101,9 @@ public class SaveModel {
 
         primaryObj.put("cars", cars);
 
-        primaryObj.put("score", input.getScore());
+        primaryObj.put("score", ((GameController) input).getScore());
 
-        primaryObj.put("timePassed", input.getTimePassed());
+        primaryObj.put("timePassed", ((GameController) input).getTimePassed());
 
         savedData.add(primaryObj);
 
@@ -118,7 +121,7 @@ public class SaveModel {
 
     }
 
-    public static JSONArray readAll(){
+    public static JSONArray read(){
         Path path = Paths.get("src/sample/DB/saves.json", new String[0]);
         String newPath = path.toAbsolutePath().toString();
 

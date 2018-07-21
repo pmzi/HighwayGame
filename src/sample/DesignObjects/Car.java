@@ -6,7 +6,7 @@ import sample.Helpers.RandomNumberGenerator;
 /**
  * Created by pmzi on 7/8/2018.
  */
-public class Car extends DesignObject {
+public class Car extends DesignObject implements HMovable {
 
     private int primarySpeed = 0;
     private int currSpeed = 0;
@@ -87,20 +87,33 @@ public class Car extends DesignObject {
         }else if(this.isHighSpeed){
             this.currSpeed *= 2;
         }
+
+        if(direction == 1){
+            this.goLeft();
+        }else{
+            this.goRight();
+        }
+
+        this.currSpeed = this.primarySpeed;
+
+    }
+
+    public void goRight(){
         int prevX = (int) this.car.getTranslateX();
         if(initiationX != 0){
             prevX = initiationX;
             initiationX = 0;
         }
+        this.car.setTranslateX(prevX + (this.currSpeed/20));
+    }
 
-        if(direction == 1){
-            this.car.setTranslateX(prevX - (this.currSpeed/20));
-        }else{
-            this.car.setTranslateX(prevX + (this.currSpeed/20));
+    public void goLeft(){
+        int prevX = (int) this.car.getTranslateX();
+        if(initiationX != 0){
+            prevX = initiationX;
+            initiationX = 0;
         }
-
-        this.currSpeed = this.primarySpeed;
-
+        this.car.setTranslateX(prevX - (this.currSpeed/20));
     }
 
     public void setNearWay(boolean nearWay){

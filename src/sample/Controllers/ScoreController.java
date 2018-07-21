@@ -7,14 +7,16 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import sample.Helpers.WindowHelper;
 import sample.Models.RankingModel;
 
 /**
  * Created by pmzi on 7/7/2018.
  */
-public class ScoreController {
+public class ScoreController extends BaseController {
 
     private ObservableList<RankingModel> data =
             FXCollections.observableArrayList(
@@ -51,6 +53,10 @@ public class ScoreController {
             data.add(tempData);
         }
 
+    }
+
+    public void exit(){
+        WindowHelper.hideCurrent((Stage) wrapper.getScene().getWindow());
     }
     
 }

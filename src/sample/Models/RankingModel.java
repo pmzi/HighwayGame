@@ -3,6 +3,8 @@ package sample.Models;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import sample.Controllers.BaseController;
+import sample.Controllers.GameController;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -13,9 +15,13 @@ import java.nio.file.Paths;
 /**
  * Created by pmzi on 7/8/2018.
  */
-public class RankingModel {
+public class RankingModel implements Writable, FullReadable, Readable {
 
-    public static void save(String name, int score, int timePassed){
+    public static void save(BaseController input){
+
+        String name = ((GameController) input).getSavename();
+        int timePassed = ((GameController) input).getTimePassed();
+        int score = ((GameController) input).getScore();
 
         JSONArray rankings = read();
         JSONObject newRank = new JSONObject();

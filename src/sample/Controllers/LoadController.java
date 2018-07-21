@@ -11,13 +11,14 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import sample.Helpers.WindowHelper;
 import sample.Models.SaveModel;
 import sample.PageBuilder.GamePage;
 
 /**
  * Created by pmzi on 7/7/2018.
  */
-public class LoadController {
+public class LoadController extends BaseController {
 
     private ObservableList<SaveModel> data =
             FXCollections.observableArrayList(
@@ -57,7 +58,7 @@ public class LoadController {
 
     private void readData(){
 
-        JSONArray savedData = SaveModel.readAll();
+        JSONArray savedData = SaveModel.read();
 
         for(int i =0;i<savedData.size();i++){
             JSONObject tempObj = (JSONObject) savedData.get(i);
@@ -73,11 +74,14 @@ public class LoadController {
 
         GamePage gamePage = new GamePage();
 
-        Stage stage = (Stage) wrapper.getScene().getWindow();
-        stage.close();
+        this.exit();
 
         gamePage.loadPage(data);
 
+    }
+
+    public void exit(){
+        WindowHelper.hideCurrent((Stage) wrapper.getScene().getWindow());
     }
 
 }

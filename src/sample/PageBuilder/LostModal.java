@@ -10,9 +10,9 @@ import java.io.IOException;
 /**
  * Created by pmzi on 7/8/2018.
  */
-public class LostModal {
+public class LostModal extends BaseModalBuilder {
 
-    public void show(){
+    public <T> T show(){
         try{
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("../Views/lostModal.fxml"));
@@ -23,9 +23,10 @@ public class LostModal {
             stage.setScene(scene);
             stage.getIcons().add(new Image("sample/assets/images/icon.png"));
             stage.show();
-
+            return null;
         }catch (IOException e){
             e.printStackTrace();
+            return null;
         }
     }
 

@@ -70,8 +70,8 @@ public class Road extends DesignObject{
 
             @Override
             public void handle(MouseEvent arg) {
-
-                RoadSettingsController controller = RoadSettingsModal.show();
+                RoadSettingsModal roadSettingsModal = new RoadSettingsModal();
+                RoadSettingsController controller = roadSettingsModal.show();
                 if(!controller.randomize.getText().equals(null) && !controller.randomize.getText().equals("")){
                     System.out.println(controller.randomize.getText().trim());
                     randomize = Integer.parseInt(controller.randomize.getText());

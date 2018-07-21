@@ -20,7 +20,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class SettingsModel {
+public class SettingsModel implements FullReadable, Writable {
 
     public static void save(SettingsController input) {
 

@@ -1,6 +1,5 @@
 package sample.PageBuilder;
 
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,14 +11,9 @@ import sample.Controllers.RoadSettingsController;
 /**
  * Created by pmzi on 7/7/2018.
  */
-public class RoadSettingsModal {
+public class RoadSettingsModal extends BaseModalBuilder {
 
-    public static RoadSettingsController show() {
-        RoadSettingsModal roadSettingsModal = new RoadSettingsModal();
-        return roadSettingsModal.showPage();
-    }
-
-    private RoadSettingsController showPage() {
+    public RoadSettingsController show() {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(this.getClass().getResource("../Views/roadSettingsModal.fxml"));

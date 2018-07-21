@@ -10,7 +10,7 @@ import sample.Helpers.WindowHelper;
 
 import java.io.IOException;
 
-public class SettingsPage {
+public class SettingsPage extends BasePageBuilder {
 
     public void show(){
         try{

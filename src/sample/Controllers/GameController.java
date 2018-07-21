@@ -24,7 +24,7 @@ import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 
-public class GameController {
+public class GameController extends BaseController {
 
     private ArrayList<Road> roadsElements = new ArrayList<>();
     private ArrayList<RoadWay> roadWays = new ArrayList<>();
@@ -69,6 +69,8 @@ public class GameController {
     private Timer gameReplyTimer;
     private Timer gameReplyTimeCreatorTimer;
     private Timer autoPilotTimer;
+
+    private String saveName;
 
     public void setRoadsElements(ArrayList<Road> roadsElements) {
         this.roadsElements = roadsElements;
@@ -140,7 +142,9 @@ public class GameController {
             return;
         }
 
-        SaveModel.save(this, controller.saveTextField.getText());
+        this.saveName = controller.saveTextField.getText();
+
+        SaveModel.save(this);
         stopAll();
         WindowHelper.hideCurrent(wrapper,true);
 
@@ -248,6 +252,8 @@ public class GameController {
     public int getTimePassed() {
         return this.timePassed;
     }
+
+    public String getSavename(){return this.saveName;}
 
     public void insertData() {
 
@@ -700,9 +706,14 @@ public class GameController {
             if (!replyMode) {
                 FinishModalController finisherController = this.showWin();
                 String saveName = finisherController.saveText.getText();
-                RankingModel.save(saveName, this.score, this.timePassed);
 
-                ReplyModel.save(this, finisherController.saveText.getText());
+                this.saveName = saveName;
+
+                RankingModel.save(this);
+
+                this.saveName = finisherController.saveText.getText();
+
+                ReplyModel.save(this);
             }
 
             WindowHelper.hideCurrent(wrapper);

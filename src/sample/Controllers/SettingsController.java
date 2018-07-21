@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 import sample.DesignObjects.Person;
 import sample.DesignObjects.Road;
 import sample.DesignObjects.RoadBridge;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 /**
  * Created by pmzi on 7/6/2018.
  */
-public class SettingsController {
+public class SettingsController extends BaseController {
 
     private int roads = 0;// should be doubled
     private int maxRoads = 4;
@@ -228,8 +229,8 @@ public class SettingsController {
         SettingsModel.save(this);
 
         WindowHelper.hideCurrent(e);
-
-        GamePage.show();
+        GamePage gamePage = new GamePage();
+        gamePage.show();
 
     }
 
@@ -370,6 +371,10 @@ public class SettingsController {
         roadWrapper.getChildren().remove(road1.get());
         roadWrapper.getChildren().remove(road2.get());
 
+    }
+
+    public void exit(){
+        WindowHelper.hideCurrent((Stage) wrapper.getScene().getWindow());
     }
 
 }

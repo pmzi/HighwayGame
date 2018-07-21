@@ -16,7 +16,7 @@ import sample.PageBuilder.SettingsPage;
 
 import java.util.Optional;
 
-public class Controller {
+public class Controller extends BaseController{
 
     private boolean isMusicPaused = false;
 
@@ -104,6 +104,14 @@ public class Controller {
         if (result.get() == ButtonType.OK) {
             Platform.exit();
         }
+
+    }
+
+    public void insertData(){
+
+    };
+
+    public void sceneDidMount(){
 
     }
 

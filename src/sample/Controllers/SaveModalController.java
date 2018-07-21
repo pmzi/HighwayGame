@@ -3,12 +3,13 @@ package sample.Controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import sample.Helpers.WindowHelper;
 
 /**
  * Created by pmzi on 7/6/2018.
  */
-public class SaveModalController {
+public class SaveModalController extends BaseController {
 
     @FXML
     public TextField saveTextField;
@@ -20,7 +21,11 @@ public class SaveModalController {
 
     public void closeWithoutSave(ActionEvent e){
         this.saveTextField.setText("");
-        WindowHelper.hideCurrent(e);
+        this.exit();
+    }
+
+    public void exit(){
+        WindowHelper.hideCurrent((Stage) saveTextField.getScene().getWindow());
     }
 
 }

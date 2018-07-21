@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * Created by pmzi on 7/7/2018.
  */
-public class LoadPage {
+public class LoadPage extends BasePageBuilder {
 
     public void show(){
         try{

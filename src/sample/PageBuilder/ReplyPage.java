@@ -15,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by pmzi on 7/7/2018.
  */
-public class ReplyPage {
+public class ReplyPage extends BasePageBuilder {
 
     public void show(){
         try{

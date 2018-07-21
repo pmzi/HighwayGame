@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Created by pmzi on 7/7/2018.
  */
-public class FinishModal {
+public class FinishModal extends BaseModalBuilder {
 
     public <T> T show(){
         try{

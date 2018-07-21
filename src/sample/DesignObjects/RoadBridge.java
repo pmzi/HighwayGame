@@ -9,7 +9,7 @@ import javafx.scene.layout.VBox;
 /**
  * Created by pmzi on 7/7/2018.
  */
-public class RoadBridge {
+public class RoadBridge extends DesignObject {
 
     private VBox roadBridge = new VBox();
 
