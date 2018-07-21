@@ -1,1 +1,154 @@
-[{"persons":{"length":2,"items":[{"yPosition":0,"x":0.0,"y":0.0},{"yPosition":0,"x":40.0,"y":0.0}]},"cars":{"items":[{"x":1396,"y":2,"speed":43,"direction":1},{"x":-56,"y":4,"speed":43,"direction":0}]},"score":0,"ways":{"length":0,"items":[]},"timePassed":6,"name":"1","roads":{"length":2,"items":[{"row":2,"speedEnd":20,"randomize":1,"speedStart":10},{"row":4,"speedEnd":20,"randomize":1,"speedStart":10},{"row":1,"speedEnd":20,"randomize":1,"speedStart":10},{"row":5,"speedEnd":20,"randomize":1,"speedStart":10}]},"bridges":{"length":1,"items":[{"x":200.0}]}},{"persons":{"length":1,"items":[{"yPosition":0,"x":0.0,"y":0.0}]},"cars":{"items":[{"x":1516,"y":1,"speed":33,"direction":1}]},"score":0,"ways":{"length":1,"items":[{"x":100.0}]},"timePassed":3,"name":"2","roads":{"length":1,"items":[{"row":2,"speedEnd":20,"randomize":1,"speedStart":10},{"row":4,"speedEnd":20,"randomize":1,"speedStart":10},{"row":1,"speedEnd":20,"randomize":1,"speedStart":10},{"row":5,"speedEnd":20,"randomize":1,"speedStart":10}]},"bridges":{"length":1,"items":[{"x":200.0}]}},{"persons":{"length":2,"items":[{"yPosition":0,"x":0.0,"y":0.0},{"yPosition":0,"x":40.0,"y":0.0}]},"cars":{"items":[{"x":1468,"y":2,"speed":44,"direction":1}]},"score":0,"ways":{"length":1,"items":[{"x":100.0}]},"timePassed":4,"name":"3","roads":{"length":1,"items":[{"row":2,"speedEnd":20,"randomize":1,"speedStart":10},{"row":4,"speedEnd":20,"randomize":1,"speedStart":10},{"row":1,"speedEnd":20,"randomize":1,"speedStart":10},{"row":5,"speedEnd":20,"randomize":1,"speedStart":10}]},"bridges":{"length":1,"items":[{"x":200.0}]}},{"persons":{"length":2,"items":[{"yPosition":0,"x":0.0,"y":0.0},{"yPosition":0,"x":40.0,"y":0.0}]},"cars":{"length":1,"items":[{"x":1492,"y":1,"speed":38,"direction":1}]},"score":0,"ways":{"length":1,"items":[{"x":100.0}]},"timePassed":4,"name":"4","roads":{"length":4,"items":[{"row":2,"speedEnd":20,"randomize":1,"speedStart":10},{"row":4,"speedEnd":20,"randomize":1,"speedStart":10},{"row":1,"speedEnd":20,"randomize":1,"speedStart":10},{"row":5,"speedEnd":20,"randomize":1,"speedStart":10}]},"bridges":{"length":1,"items":[{"x":200.0}]}},{"persons":{"length":2,"items":[{"yPosition":0,"x":0.0,"y":0.0},{"yPosition":1,"x":800.0,"y":-62.0}]},"cars":{"length":2,"items":[{"x":176,"y":4,"speed":49,"direction":0},{"x":46,"y":4,"speed":31,"direction":0}]},"score":0,"ways":{"length":1,"items":[{"x":100.0}]},"timePassed":10,"name":"5","roads":{"length":4,"items":[{"row":2,"speedEnd":20,"randomize":1,"speedStart":10},{"row":4,"speedEnd":20,"randomize":1,"speedStart":10},{"row":1,"speedEnd":20,"randomize":1,"speedStart":10},{"row":5,"speedEnd":20,"randomize":1,"speedStart":10}]},"bridges":{"length":1,"items":[{"x":200.0}]}},{"persons":{"length":1,"items":[{"yPosition":0,"x":0.0,"y":0.0}]},"cars":{"length":2,"items":[{"creationTime":0,"x":1342,"y":1,"speed":36,"direction":1},{"creationTime":1,"x":1452,"y":2,"speed":45,"direction":1}]},"score":0,"ways":{"length":1,"items":[{"x":100.0}]},"timePassed":9,"name":"6","roads":{"length":4,"items":[{"row":2,"speedEnd":20,"randomize":1,"speedStart":10},{"row":4,"speedEnd":20,"randomize":1,"speedStart":10},{"row":1,"speedEnd":20,"randomize":1,"speedStart":10},{"row":5,"speedEnd":20,"randomize":1,"speedStart":10}]},"bridges":{"length":1,"items":[{"x":200.0}]}},{"persons":{"length":1,"items":[{"yPosition":0,"x":910.0,"y":0.0}]},"cars":{"length":3,"items":[{"creationTime":0,"x":666,"y":2,"speed":116,"direction":0},{"creationTime":1,"x":1252,"y":1,"speed":82,"direction":1},{"creationTime":2,"x":104,"y":2,"speed":135,"direction":0}]},"score":0,"ways":{"length":0,"items":[]},"timePassed":8,"name":"f","roads":{"length":2,"items":[{"row":1,"speedEnd":140,"randomize":1,"speedStart":80},{"row":3,"speedEnd":140,"randomize":1,"speedStart":80}]},"bridges":{"length":0,"items":[]}},{"persons":{"length":1,"items":[{"yPosition":0,"x":0.0,"y":0.0}]},"cars":{"length":2,"items":[{"creationTime":0,"x":380,"y":2,"speed":138,"direction":0},{"creationTime":1,"x":11,"y":2,"speed":111,"direction":0}]},"score":0,"ways":{"length":0,"items":[]},"timePassed":4,"name":"sadsad","roads":{"length":2,"items":[{"row":1,"speedEnd":140,"randomize":1,"speedStart":80},{"row":3,"speedEnd":140,"randomize":1,"speedStart":80}]},"bridges":{"length":0,"items":[]}},{"persons":{"length":1,"items":[{"yPosition":0,"x":0.0,"y":0.0}]},"cars":{"length":3,"items":[{"creationTime":0,"x":1056,"y":1,"speed":86,"direction":1},{"creationTime":1,"x":321,"y":2,"speed":111,"direction":0},{"creationTime":2,"x":8,"y":2,"speed":82,"direction":0}]},"score":0,"ways":{"length":0,"items":[]},"timePassed":8,"name":"fdgfdgfdg","roads":{"length":2,"items":[{"row":1,"speedEnd":140,"randomize":1,"speedStart":80},{"row":3,"speedEnd":140,"randomize":1,"speedStart":80}]},"bridges":{"length":0,"items":[]}},{"persons":{"length":1,"items":[{"yPosition":0,"x":0.0,"y":0.0}]},"cars":{"length":65,"items":[{"creationTime":0,"x":-21494,"y":2,"speed":138,"direction":1},{"creationTime":1,"x":18886,"y":3,"speed":110,"direction":0},{"creationTime":2,"x":-17050,"y":1,"speed":102,"direction":1},{"creationTime":3,"x":18291,"y":4,"speed":111,"direction":0},{"creationTime":4,"x":14380,"y":3,"speed":91,"direction":0},{"creationTime":5,"x":14281,"y":3,"speed":112,"direction":0},{"creationTime":6,"x":-15860,"y":1,"speed":100,"direction":1},{"creationTime":7,"x":13668,"y":3,"speed":98,"direction":0},{"creationTime":8,"x":-15761,"y":1,"speed":136,"direction":1},{"creationTime":9,"x":-11656,"y":2,"speed":82,"direction":1},{"creationTime":10,"x":13570,"y":3,"speed":130,"direction":0},{"creationTime":11,"x":-11184,"y":1,"speed":97,"direction":1},{"creationTime":12,"x":12480,"y":4,"speed":94,"direction":0},{"creationTime":13,"x":12244,"y":3,"speed":80,"direction":0},{"creationTime":14,"x":-11086,"y":1,"speed":123,"direction":1},{"creationTime":15,"x":-10987,"y":1,"speed":103,"direction":1},{"creationTime":16,"x":-9992,"y":1,"speed":84,"direction":1},{"creationTime":17,"x":13472,"y":3,"speed":132,"direction":0},{"creationTime":18,"x":11052,"y":4,"speed":81,"direction":0},{"creationTime":19,"x":-9893,"y":1,"speed":114,"direction":1},{"creationTime":20,"x":-9040,"y":1,"speed":89,"direction":1},{"creationTime":21,"x":-8804,"y":1,"speed":93,"direction":1},{"creationTime":22,"x":12145,"y":3,"speed":111,"direction":0},{"creationTime":23,"x":9864,"y":4,"speed":89,"direction":0},{"creationTime":24,"x":-8705,"y":1,"speed":103,"direction":1},{"creationTime":25,"x":11751,"y":3,"speed":101,"direction":0},{"creationTime":26,"x":-7612,"y":2,"speed":97,"direction":1},{"creationTime":27,"x":11156,"y":3,"speed":113,"direction":0},{"creationTime":28,"x":-8606,"y":1,"speed":129,"direction":1},{"creationTime":29,"x":11652,"y":3,"speed":124,"direction":0},{"creationTime":30,"x":-6660,"y":1,"speed":88,"direction":1},{"creationTime":31,"x":-6424,"y":1,"speed":94,"direction":1},{"creationTime":32,"x":-6325,"y":1,"speed":113,"direction":1},{"creationTime":33,"x":-8508,"y":1,"speed":125,"direction":1},{"creationTime":34,"x":9071,"y":4,"speed":102,"direction":0},{"creationTime":35,"x":8771,"y":3,"speed":110,"direction":0},{"creationTime":36,"x":-8410,"y":1,"speed":132,"direction":1},{"creationTime":37,"x":6528,"y":4,"speed":84,"direction":0},{"creationTime":38,"x":-6226,"y":1,"speed":134,"direction":1},{"creationTime":39,"x":7581,"y":3,"speed":106,"direction":0},{"creationTime":40,"x":-7220,"y":2,"speed":121,"direction":1},{"creationTime":41,"x":-6860,"y":2,"speed":135,"direction":1},{"creationTime":42,"x":-3804,"y":1,"speed":96,"direction":1},{"creationTime":43,"x":5100,"y":3,"speed":83,"direction":0},{"creationTime":44,"x":5001,"y":3,"speed":101,"direction":0},{"creationTime":45,"x":5796,"y":4,"speed":110,"direction":0},{"creationTime":46,"x":-2852,"y":1,"speed":91,"direction":1},{"creationTime":47,"x":-2753,"y":1,"speed":104,"direction":1},{"creationTime":48,"x":5900,"y":3,"speed":135,"direction":0},{"creationTime":49,"x":-3070,"y":2,"speed":110,"direction":1},{"creationTime":50,"x":3436,"y":4,"speed":94,"direction":0},{"creationTime":51,"x":-1660,"y":1,"speed":80,"direction":1},{"creationTime":52,"x":-1562,"y":1,"speed":126,"direction":1},{"creationTime":53,"x":-1464,"y":1,"speed":127,"direction":1},{"creationTime":54,"x":2492,"y":4,"speed":94,"direction":0},{"creationTime":55,"x":-720,"y":1,"speed":90,"direction":1},{"creationTime":56,"x":-1568,"y":2,"speed":126,"direction":1},{"creationTime":57,"x":-272,"y":1,"speed":94,"direction":1},{"creationTime":58,"x":-854,"y":2,"speed":137,"direction":1},{"creationTime":59,"x":1332,"y":4,"speed":80,"direction":0},{"creationTime":60,"x":1096,"y":4,"speed":92,"direction":0},{"creationTime":61,"x":680,"y":1,"speed":88,"direction":1},{"creationTime":62,"x":916,"y":1,"speed":85,"direction":1},{"creationTime":63,"x":1040,"y":1,"speed":108,"direction":1},{"creationTime":64,"x":196,"y":4,"speed":101,"direction":0}]},"score":0,"ways":{"length":0,"items":[]},"timePassed":195,"name":"s","roads":{"length":4,"items":[{"row":2,"speedEnd":140,"randomize":1,"speedStart":80},{"row":4,"speedEnd":140,"randomize":1,"speedStart":80},{"row":1,"speedEnd":140,"randomize":1,"speedStart":80},{"row":5,"speedEnd":140,"randomize":1,"speedStart":80}]},"bridges":{"length":0,"items":[]}}]
+[
+  {
+    "persons": {
+      "length": 1,
+      "items": [
+        {
+          "yPosition": 0,
+          "x": 230.0,
+          "y": 0.0
+        }
+      ]
+    },
+    "cars": {
+      "length": 12,
+      "items": [
+        {
+          "creationTime": 0,
+          "x": -992,
+          "y": 1,
+          "speed": 87,
+          "direction": 1
+        },
+        {
+          "creationTime": 1,
+          "x": -894,
+          "y": 1,
+          "speed": 126,
+          "direction": 1
+        },
+        {
+          "creationTime": 2,
+          "x": 2566,
+          "y": 4,
+          "speed": 110,
+          "direction": 0
+        },
+        {
+          "creationTime": 3,
+          "x": 2831,
+          "y": 3,
+          "speed": 136,
+          "direction": 0
+        },
+        {
+          "creationTime": 4,
+          "x": 1971,
+          "y": 4,
+          "speed": 114,
+          "direction": 0
+        },
+        {
+          "creationTime": 5,
+          "x": -584,
+          "y": 1,
+          "speed": 128,
+          "direction": 1
+        },
+        {
+          "creationTime": 6,
+          "x": 1763,
+          "y": 3,
+          "speed": 133,
+          "direction": 0
+        },
+        {
+          "creationTime": 7,
+          "x": 85,
+          "y": 2,
+          "speed": 131,
+          "direction": 1
+        },
+        {
+          "creationTime": 8,
+          "x": 640,
+          "y": 3,
+          "speed": 82,
+          "direction": 0
+        },
+        {
+          "creationTime": 9,
+          "x": 875,
+          "y": 1,
+          "speed": 111,
+          "direction": 1
+        },
+        {
+          "creationTime": 10,
+          "x": 1090,
+          "y": 1,
+          "speed": 126,
+          "direction": 1
+        },
+        {
+          "creationTime": 11,
+          "x": 68,
+          "y": 4,
+          "speed": 133,
+          "direction": 0
+        }
+      ]
+    },
+    "score": 0,
+    "ways": {
+      "length": 2,
+      "items": [
+        {
+          "x": 280.0
+        },
+        {
+          "x": 100.0
+        }
+      ]
+    },
+    "timePassed": 35,
+    "name": "bbbbbbbb",
+    "roads": {
+      "length": 4,
+      "items": [
+        {
+          "row": 2,
+          "speedEnd": 140,
+          "randomize": 1,
+          "speedStart": 80
+        },
+        {
+          "row": 4,
+          "speedEnd": 140,
+          "randomize": 1,
+          "speedStart": 80
+        },
+        {
+          "row": 1,
+          "speedEnd": 140,
+          "randomize": 1,
+          "speedStart": 80
+        },
+        {
+          "row": 5,
+          "speedEnd": 140,
+          "randomize": 1,
+          "speedStart": 80
+        }
+      ]
+    },
+    "bridges": {
+      "length": 1,
+      "items": [
+        {
+          "x": 430.0
+        }
+      ]
+    }
+  }
+]
